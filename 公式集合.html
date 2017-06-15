@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>公式集合</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <style>
+    atom-text-editor {
+  background-color: white;
+  color: #555;
+}.markdown-preview-enhanced pre .invisible-character {
+  color: rgba(85, 85, 85, 0.2);
+}.markdown-preview-enhanced pre .indent-guide {
+  color: rgba(85, 85, 85, 0.2);
+}.markdown-preview-enhanced pre .wrap-guide {
+  background-color: rgba(85, 85, 85, 0.2);
+}.markdown-preview-enhanced pre .gutter {
+  color: #555;
+  background: white;
+}.markdown-preview-enhanced pre .gutter .line-number.folded,.markdown-preview-enhanced pre .gutter .line-number:after,.markdown-preview-enhanced pre .fold-marker:after {
+  color: #e87b00;
+}.markdown-preview-enhanced pre .invisible {
+  color: #555;
+}.markdown-preview-enhanced pre .selection .region {
+  background-color: #e1e1e1;
+}.markdown-preview-enhanced pre .bracket-matcher .region {
+  background-color: #C9C9C9;
+  opacity: .7;
+  border-bottom: 0 none;
+}.markdown-preview-enhanced pre.is-focused .cursor {
+  border-color: black;
+}.markdown-preview-enhanced pre.is-focused .selection .region {
+  background-color: #afc4da;
+}.markdown-preview-enhanced pre.is-focused .line-number.cursor-line-no-selection,.markdown-preview-enhanced pre.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}.markdown-preview-enhanced pre .mpe-syntax--source.mpe-syntax--gfm {
+  color: #444;
+}.markdown-preview-enhanced pre .mpe-syntax--gfm .mpe-syntax--markup.mpe-syntax--heading {
+  color: #111;
+}.markdown-preview-enhanced pre .mpe-syntax--gfm .mpe-syntax--link {
+  color: #888;
+}.markdown-preview-enhanced pre .mpe-syntax--gfm .mpe-syntax--variable.mpe-syntax--list {
+  color: #888;
+}.markdown-preview-enhanced pre .mpe-syntax--markdown .mpe-syntax--paragraph {
+  color: #444;
+}.markdown-preview-enhanced pre .mpe-syntax--markdown .mpe-syntax--heading {
+  color: #111;
+}.markdown-preview-enhanced pre .mpe-syntax--markdown .mpe-syntax--link {
+  color: #888;
+}.markdown-preview-enhanced pre .mpe-syntax--markdown .mpe-syntax--link .mpe-syntax--string {
+  color: #888;
+}
+.mpe-syntax--comment {
+  color: #999988;
+  font-style: italic;
+}
+.mpe-syntax--string {
+  color: #D14;
+}
+.mpe-syntax--string .mpe-syntax--source,
+.mpe-syntax--string .mpe-syntax--meta.mpe-syntax--embedded.mpe-syntax--line {
+  color: #5A5A5A;
+}
+.mpe-syntax--string .mpe-syntax--punctuation.mpe-syntax--section.mpe-syntax--embedded {
+  color: #920B2D;
+}
+.mpe-syntax--string .mpe-syntax--punctuation.mpe-syntax--section.mpe-syntax--embedded .mpe-syntax--source {
+  color: #920B2D;
+}
+.mpe-syntax--constant.mpe-syntax--numeric {
+  color: #D14;
+}
+.mpe-syntax--constant.mpe-syntax--language {
+  color: #606aa1;
+}
+.mpe-syntax--constant.mpe-syntax--character,
+.mpe-syntax--constant.mpe-syntax--other {
+  color: #606aa1;
+}
+.mpe-syntax--constant.mpe-syntax--symbol {
+  color: #990073;
+}
+.mpe-syntax--constant.mpe-syntax--numeric.mpe-syntax--line-number.mpe-syntax--find-in-files .mpe-syntax--match {
+  color: rgba(143, 190, 0, 0.63);
+}
+.mpe-syntax--variable {
+  color: #008080;
+}
+.mpe-syntax--variable.mpe-syntax--parameter {
+  color: #606aa1;
+}
+.mpe-syntax--keyword {
+  color: #222;
+  font-weight: bold;
+}
+.mpe-syntax--keyword.mpe-syntax--unit {
+  color: #445588;
+}
+.mpe-syntax--keyword.mpe-syntax--special-method {
+  color: #0086B3;
+}
+.mpe-syntax--storage {
+  color: #222;
+}
+.mpe-syntax--storage.mpe-syntax--type {
+  color: #222;
+}
+.mpe-syntax--entity.mpe-syntax--name.mpe-syntax--class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.mpe-syntax--entity.mpe-syntax--other.mpe-syntax--inherited-class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.mpe-syntax--entity.mpe-syntax--name.mpe-syntax--function {
+  color: #900;
+}
+.mpe-syntax--entity.mpe-syntax--name.mpe-syntax--tag {
+  color: #008080;
+}
+.mpe-syntax--entity.mpe-syntax--other.mpe-syntax--attribute-name {
+  color: #458;
+  font-weight: bold;
+}
+.mpe-syntax--entity.mpe-syntax--name.mpe-syntax--filename.mpe-syntax--find-in-files {
+  color: #E6DB74;
+}
+.mpe-syntax--support.mpe-syntax--constant,
+.mpe-syntax--support.mpe-syntax--function,
+.mpe-syntax--support.mpe-syntax--type {
+  color: #458;
+}
+.mpe-syntax--support.mpe-syntax--class {
+  color: #008080;
+}
+.mpe-syntax--invalid {
+  color: #F8F8F0;
+  background-color: #00A8C6;
+}
+.mpe-syntax--invalid.mpe-syntax--deprecated {
+  color: #F8F8F0;
+  background-color: #8FBE00;
+}
+.mpe-syntax--meta.mpe-syntax--structure.mpe-syntax--dictionary.mpe-syntax--json > .mpe-syntax--string.mpe-syntax--quoted.mpe-syntax--double.mpe-syntax--json,
+.mpe-syntax--meta.mpe-syntax--structure.mpe-syntax--dictionary.mpe-syntax--json > .mpe-syntax--string.mpe-syntax--quoted.mpe-syntax--double.mpe-syntax--json .mpe-syntax--punctuation.mpe-syntax--string {
+  color: #000080;
+}
+.mpe-syntax--meta.mpe-syntax--structure.mpe-syntax--dictionary.mpe-syntax--value.mpe-syntax--json > .mpe-syntax--string.mpe-syntax--quoted.mpe-syntax--double.mpe-syntax--json {
+  color: #d14;
+}
+.mpe-syntax--meta.mpe-syntax--diff,
+.mpe-syntax--meta.mpe-syntax--diff.mpe-syntax--header {
+  color: #75715E;
+}
+.mpe-syntax--css.mpe-syntax--support.mpe-syntax--property-name {
+  font-weight: bold;
+  color: #333;
+}
+.mpe-syntax--css.mpe-syntax--constant {
+  color: #099;
+}
+.markdown-preview-enhanced {
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  background-color: white;
+  overflow: initial;
+  margin: 10px 13px 10px 13px;
+  padding: 2em;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.markdown-preview-enhanced > :first-child {
+  margin-top: 0;
+}
+.markdown-preview-enhanced[is="space-pen-div"] {
+  width: 100%;
+  margin: 0;
+  z-index: 999;
+  overflow: scroll;
+  font-size: 16px;
+  display: block;
+  position: absolute;
+}
+.markdown-preview-enhanced h1,
+.markdown-preview-enhanced h2,
+.markdown-preview-enhanced h3,
+.markdown-preview-enhanced h4,
+.markdown-preview-enhanced h5,
+.markdown-preview-enhanced h6 {
+  line-height: 1.2;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  color: #030303;
+}
+.markdown-preview-enhanced h1 {
+  font-size: 2.25em;
+  font-weight: 300;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #d6d6d6;
+}
+.markdown-preview-enhanced h2 {
+  font-size: 1.75em;
+  font-weight: 400;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #d6d6d6;
+}
+.markdown-preview-enhanced h3 {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.markdown-preview-enhanced h4 {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+.markdown-preview-enhanced h5 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.markdown-preview-enhanced h6 {
+  font-size: 1.0em;
+  font-weight: 600;
+}
+.markdown-preview-enhanced h1,
+.markdown-preview-enhanced h2,
+.markdown-preview-enhanced h3,
+.markdown-preview-enhanced h4,
+.markdown-preview-enhanced h5 {
+  font-weight: 600;
+}
+.markdown-preview-enhanced h5 {
+  font-size: 1em;
+}
+.markdown-preview-enhanced h6 {
+  color: #7e7e7e;
+}
+.markdown-preview-enhanced h1,
+.markdown-preview-enhanced h2 {
+  border-bottom: 1px solid #d6d6d6;
+}
+.markdown-preview-enhanced strong {
+  color: #030303;
+}
+.markdown-preview-enhanced del {
+  color: #7e7e7e;
+}
+.markdown-preview-enhanced a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+.markdown-preview-enhanced a {
+  color: #08c;
+  text-decoration: none;
+}
+.markdown-preview-enhanced a:hover {
+  color: #0050a3;
+  text-decoration: none;
+}
+.markdown-preview-enhanced img,
+.markdown-preview-enhanced svg {
+  max-width: 100%;
+}
+.markdown-preview-enhanced > p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  word-wrap: break-word;
+}
+.markdown-preview-enhanced > ul,
+.markdown-preview-enhanced > ol {
+  margin-bottom: 16px;
+}
+.markdown-preview-enhanced ul,
+.markdown-preview-enhanced ol {
+  padding-left: 2em;
+}
+.markdown-preview-enhanced ul.no-list,
+.markdown-preview-enhanced ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+.markdown-preview-enhanced ul ul,
+.markdown-preview-enhanced ul ol,
+.markdown-preview-enhanced ol ol,
+.markdown-preview-enhanced ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-preview-enhanced li {
+  margin-bottom: 0;
+}
+.markdown-preview-enhanced li.task-list-item {
+  list-style: none;
+}
+.markdown-preview-enhanced li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-preview-enhanced .task-list-item-checkbox {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+.markdown-preview-enhanced .task-list-item-checkbox:hover {
+  cursor: pointer;
+}
+.markdown-preview-enhanced blockquote {
+  margin: 16px 0;
+  font-size: inherit;
+  padding: 0 15px;
+  color: #7e7e7e;
+  border-left: 4px solid #d6d6d6;
+}
+.markdown-preview-enhanced blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-preview-enhanced blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-preview-enhanced hr {
+  height: 4px;
+  margin: 32px 0;
+  background-color: #d6d6d6;
+  border: 0 none;
+}
+.markdown-preview-enhanced table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-preview-enhanced table th {
+  font-weight: bold;
+  color: #030303;
+}
+.markdown-preview-enhanced table td,
+.markdown-preview-enhanced table th {
+  border: 1px solid #d6d6d6;
+  padding: 6px 13px;
+}
+.markdown-preview-enhanced dl {
+  padding: 0;
+}
+.markdown-preview-enhanced dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-preview-enhanced dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-preview-enhanced code {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 0.85em !important;
+  color: #030303;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  padding: 0.2em 0;
+}
+.markdown-preview-enhanced code::before,
+.markdown-preview-enhanced code::after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-preview-enhanced pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 0.85em !important;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-preview-enhanced .highlight {
+  margin-bottom: 16px;
+}
+.markdown-preview-enhanced .highlight pre,
+.markdown-preview-enhanced pre {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  padding: 16px;
+  overflow: auto;
+  font-size: 0.85em !important;
+  line-height: 1.45;
+  color: #555;
+  background-color: #f0f0f0 !important;
+  border: #d6d6d6;
+  border-radius: 3px;
+}
+.markdown-preview-enhanced .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-preview-enhanced pre {
+  word-wrap: break-word;
+  white-space: normal;
+  word-break: break-all;
+}
+.markdown-preview-enhanced pre .section {
+  opacity: 1;
+}
+.markdown-preview-enhanced pre code,
+.markdown-preview-enhanced pre tt {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-preview-enhanced pre code:before,
+.markdown-preview-enhanced pre tt:before,
+.markdown-preview-enhanced pre code:after,
+.markdown-preview-enhanced pre tt:after {
+  content: normal;
+}
+.markdown-preview-enhanced p,
+.markdown-preview-enhanced blockquote,
+.markdown-preview-enhanced ul,
+.markdown-preview-enhanced ol,
+.markdown-preview-enhanced dl,
+.markdown-preview-enhanced pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-preview-enhanced.markdown-preview-enhanced pre {
+  margin: 16px 0;
+  padding: 1em;
+  font-size: .92em;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+}
+.markdown-preview-enhanced kbd {
+  color: #030303;
+  border: 1px solid #d6d6d6;
+  border-bottom: 2px solid #c7c7c7;
+  padding: 2px 4px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+}
+.markdown-preview-enhanced .pagebreak,
+.markdown-preview-enhanced .newpage {
+  page-break-before: always;
+}
+@media screen and (min-width: 914px) {
+  .markdown-preview-enhanced {
+    width: 980px;
+    margin: 10px auto;
+    background: white;
+  }
+}
+@media screen and (max-width: 400px) {
+  .markdown-preview-enhanced {
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+}
+@media print {
+  .markdown-preview-enhanced {
+    background-color: white;
+  }
+  .markdown-preview-enhanced h1,
+  .markdown-preview-enhanced h2,
+  .markdown-preview-enhanced h3,
+  .markdown-preview-enhanced h4,
+  .markdown-preview-enhanced h5,
+  .markdown-preview-enhanced h6 {
+    color: #030303;
+    page-break-after: avoid;
+  }
+  .markdown-preview-enhanced blockquote {
+    color: #7e7e7e;
+  }
+  .markdown-preview-enhanced table,
+  .markdown-preview-enhanced pre {
+    page-break-inside: avoid;
+  }
+  .markdown-preview-enhanced table {
+    display: table;
+  }
+  .markdown-preview-enhanced img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .markdown-preview-enhanced pre,
+  .markdown-preview-enhanced code {
+    word-wrap: break-word;
+    white-space: normal;
+  }
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk {
+  position: relative;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .output-div {
+  overflow-x: auto;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .output-div svg {
+  display: block;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk pre {
+  cursor: text;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-btn,
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-all-btn {
+  float: right;
+  margin-left: 4px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  color: #eee;
+  background-color: #528bff;
+  background-image: none;
+  border: none;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-btn:hover,
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-all-btn:hover {
+  background-color: #4b7fe8;
+  cursor: pointer;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk:hover .btn-group {
+  display: block;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.85em;
+  color: inherit;
+  padding: 2px 6px;
+  background-color: rgba(0, 0, 0, 0.04);
+  display: none;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.running .btn-group {
+  display: none;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.running .status {
+  display: block;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .back-to-top-btn,
+.markdown-preview-enhanced[is="space-pen-div"] .refresh-btn {
+  position: fixed;
+  display: none;
+  right: 24px;
+  top: 54px;
+}
+.markdown-preview-enhanced[is="space-pen-div"] .back-to-top-btn {
+  right: 72px;
+}
+.markdown-preview-enhanced[is="space-pen-div"]:hover .back-to-top-btn,
+.markdown-preview-enhanced[is="space-pen-div"]:hover .refresh-btn {
+  display: block;
+  opacity: 0.4;
+}
+.markdown-preview-enhanced[is="space-pen-div"]:hover .back-to-top-btn:hover,
+.markdown-preview-enhanced[is="space-pen-div"]:hover .refresh-btn:hover {
+  opacity: 1.0;
+}
+.markdown-preview-enhanced:not([is="space-pen-div"]) .code-chunk .btn-group {
+  display: none;
+}
+.markdown-preview-enhanced:not([is="space-pen-div"]) .code-chunk .status {
+  display: none;
+}
+.markdown-preview-enhanced:not([is="space-pen-div"]) .back-to-top-btn {
+  display: none;
+}
+/*
+ * Reveal.js styles
+ */
+[data-presentation-preview-mode] {
+  background-color: #f4f4f4;
+}
+[data-presentation-preview-mode][data-use-github-style] {
+  background-color: #f4f4f4;
+}
+[data-presentation-preview-mode] .preview-slides {
+  width: 100%;
+}
+[data-presentation-preview-mode] .preview-slides .slide {
+  position: relative;
+  background-color: white !important;
+  padding: 2em !important;
+  margin-bottom: 12px;
+  text-align: left !important;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 0px 16px 4px #eeeeee;
+  font-size: 24px;
+}
+[data-presentation-preview-mode] .preview-slides .slide h1,
+[data-presentation-preview-mode] .preview-slides .slide h2,
+[data-presentation-preview-mode] .preview-slides .slide h3,
+[data-presentation-preview-mode] .preview-slides .slide h4,
+[data-presentation-preview-mode] .preview-slides .slide h5,
+[data-presentation-preview-mode] .preview-slides .slide h6 {
+  margin-top: 0;
+}
+[data-presentation-preview-mode] .preview-slides .slide .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+[data-presentation-preview-mode] .preview-slides .slide .background-iframe,
+[data-presentation-preview-mode] .preview-slides .slide .background-iframe-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border: none;
+  z-index: 1;
+}
+[data-presentation-preview-mode] .preview-slides .slide .background-iframe-overlay {
+  z-index: 2;
+}
+[data-presentation-preview-mode][data-use-github-style] .slide {
+  background-color: #fff !important;
+}
+[data-presentation-preview-mode][data-use-github-style] h1,
+[data-presentation-preview-mode][data-use-github-style] h2,
+[data-presentation-preview-mode][data-use-github-style] h3,
+[data-presentation-preview-mode][data-use-github-style] h4,
+[data-presentation-preview-mode][data-use-github-style] h5,
+[data-presentation-preview-mode][data-use-github-style] h6 {
+  margin-top: 0;
+}
+[data-presentation-preview-mode] section {
+  display: block;
+  width: 100%;
+  transform-style: preserve-3d;
+  font-size: 100%;
+  font: inherit;
+  z-index: 100;
+}
+.markdown-preview-enhanced[data-presentation-mode] {
+  font-size: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.markdown-preview-enhanced[data-presentation-mode] h1,
+.markdown-preview-enhanced[data-presentation-mode] h2,
+.markdown-preview-enhanced[data-presentation-mode] h3,
+.markdown-preview-enhanced[data-presentation-mode] h4,
+.markdown-preview-enhanced[data-presentation-mode] h5,
+.markdown-preview-enhanced[data-presentation-mode] h6 {
+  margin-top: 0;
+}
+.markdown-preview-enhanced[data-presentation-mode] strong {
+  font-weight: bold;
+}
+.markdown-preview-enhanced[data-presentation-mode]::-webkit-scrollbar {
+  display: none;
+}
+.markdown-preview-enhanced .slides {
+  text-align: left !important;
+}
+
+    </style>
+
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]], processEnvironments: false, processEscapes: true} }); </script> <script type="text/javascript" async src="file://C:\Users\J.Pei\.atom\packages\markdown-preview-enhanced\dependencies\mathjax\MathJax.js?config=TeX-AMS_CHTML"></script>
+
+    
+  </head>
+  <body class="markdown-preview-enhanced "
+      >
+
+  <ul>
+<li><p><a href="#&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x70ED;&#x7535;&#x516C;&#x5F0F;&#x76F8;&#x5173;">欢迎来到热电公式相关</a>
+<ul>
+<li><p><a href="#xrd&#x8BA1;&#x7B97;&#x516C;&#x5F0F;">XRD计算公式</a>
+<ul>
+<li><p><a href="#&#x7EC7;&#x6784;&#x5EA6;&#x8BA1;&#x7B97;">织构度计算</a>
+<ul>
+<li><p><a href="#lotgering&#x6CD5;&#x8BA1;&#x7B97;&#x7EC7;&#x6784;&#x5EA6;">Lotgering法计算织构度</a></p></li>
+</ul></p></li>
+</ul></p></li>
+<li><p><a href="#&#x70ED;&#x7535;&#x8F93;&#x8FD0;&#x7406;&#x8BBA;&#x57FA;&#x7840;">热电输运理论基础</a>
+<ul>
+<li><p><a href="#&#x7535;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">电输运性质</a>
+<ul>
+<li><p><a href="#boltztmann-distribution&#x73BB;&#x5C14;&#x5179;&#x66FC;&#x5206;&#x5E03;&#x5218;&#x6069;&#x79D1;-&#x534A;&#x5BFC;&#x4F53;&#x7269;&#x7406;">Boltztmann distribution(玻尔兹曼分布)[刘恩科-半导体物理]</a></p></li>
+<li><p><a href="#fermi-dirac-distribution&#x8D39;&#x7C73;&#x72C4;&#x62C9;&#x514B;&#x5206;&#x5E03;02-01">Fermi-Dirac distribution(费米狄拉克分布)</a></p></li>
+<li><p><a href="#&#x7535;&#x5B50;&#x6570;&#x76EE;&#x4E0E;&#x8D39;&#x7C73;&#x72C4;&#x62C9;&#x514B;&#x5206;&#x5E03;&#x7684;&#x5173;&#x7CFB;02-01">电子数目与费米狄拉克分布的关系</a></p></li>
+<li><p><a href="#&#x6001;&#x5BC6;&#x5EA6;&#x4E0E;&#x6709;&#x6548;&#x8D28;&#x91CF;&#x7684;&#x5173;&#x7CFB;02-01">态密度与有效质量的关系</a></p></li>
+<li><p><a href="#&#x73BB;&#x5C14;&#x5179;&#x66FC;&#x8F93;&#x8FD0;&#x7406;&#x8BBA;&#x63A8;&#x5BFC;02-01">玻尔兹曼输运理论推导</a></p></li>
+</ul></p></li>
+<li><p><a href="#&#x70ED;&#x8F93;&#x8FD0;&#x6027;&#x8D28;02-01">热输运性质</a></p></li>
+</ul></p></li>
+<li><p><a href="#&#x7535;&#x5B66;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">电学输运性质</a>
+<ul>
+<li><p><a href="#&#x975E;&#x7B80;&#x5E76;&#x534A;&#x5BFC;&#x4F53;&#x7ECF;&#x5178;&#x6A21;&#x578B;">非简并半导体(经典模型)</a></p></li>
+<li><p><a href="#&#x7B80;&#x5E76;&#x534A;&#x5BFC;&#x4F53;">简并半导体</a>
+<ul>
+<li><p><a href="#&#x5355;&#x629B;&#x7269;&#x5E26;">单抛物带</a>
+<ul>
+<li><p><a href="#seebeck&#x7CFB;&#x6570;">Seebeck系数</a></p></li>
+<li><p><a href="#&#x8F7D;&#x6D41;&#x5B50;&#x6D53;&#x5EA6;">载流子浓度</a></p></li>
+<li><p><a href="#&#x6D1B;&#x4F26;&#x5179;&#x5E38;&#x6570;lorentz-number">洛伦兹常数(lorentz number)</a></p></li>
+</ul></p></li>
+<li><p><a href="#&#x5355;kane&#x5E26;">单Kane带</a></p></li>
+<li><p><a href="#&#x53CC;&#x629B;&#x7269;&#x5E26;">双抛物带</a></p></li>
+<li><p><a href="#snte&#x6A21;&#x578B;&#x629B;&#x7269;&#x5E26;kane&#x5E26;">SnTe模型(抛物带+kane带)</a></p></li>
+<li><p><a href="#wiedemann-franz-law&#x9B4F;&#x5FB7;&#x66FC;-&#x5F17;&#x6717;&#x5179;&#x5B9A;&#x5F8B;">wiedemann-Franz Law(魏德曼-弗朗兹定律)</a></p></li>
+<li><p><a href="#lorentz-number&#x6D1B;&#x4F26;&#x5179;&#x5E38;&#x6570;"><strong>lorentz number</strong>(洛伦兹常数)</a></p></li>
+<li><p><a href="#mott&#x65B9;&#x7A0B;03-0803-0903-0503-1003-11">mott方程</a></p></li>
+<li><p><a href="#&#x6563;&#x5C04;&#x56E0;&#x5B50;&#x7684;&#x7C7B;&#x578B;03-12-&#x8000;&#x6625;&#x54E5;&#x535A;&#x58EB;&#x8BBA;&#x6587;">散射因子的类型 (耀春哥博士论文)</a></p></li>
+<li><p><a href="#seebeck&#x7CFB;&#x6570;&#x4E0E;&#x4E24;&#x79CD;&#x8F7D;&#x6D41;&#x5B50;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;03-13">Seebeck系数与两种载流子之间的关系</a></p></li>
+<li><p><a href="#pisarenko-relation&#x76AE;&#x8428;&#x8FDE;&#x79D1;&#x66F2;&#x7EBF;">pisarenko relation(皮萨连科曲线)</a></p></li>
+<li><p><a href="#&#x53CC;&#x6781;&#x6269;&#x6563;">双极扩散</a></p></li>
+<li><p><a href="#&#x590D;&#x5408;&#x7ED3;&#x6784;&#x7535;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">复合结构电输运性质</a></p></li>
+</ul></p></li>
+</ul></p></li>
+<li><p><a href="#&#x70ED;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">热输运性质</a>
+<ul>
+<li><p><a href="#&#x70ED;&#x5BB9;cp&#x7406;&#x8BBA;&#x503C;">热容Cp理论值</a></p></li>
+<li><p><a href="#&#x5FB7;&#x62DC;&#x6E29;&#x5EA6;">德拜温度</a></p></li>
+<li><p><a href="#&#x70ED;&#x5BFC;&#x7387;&#x7684;&#x975E;&#x6676;&#x6781;&#x9650;">热导率的非晶极限</a></p></li>
+<li><p><a href="#callaway&#x6A21;&#x578B;04-05">callaway模型</a></p></li>
+<li><p><a href="#debye-callaway&#x6A21;&#x578B;04-06">Debye-callaway模型</a></p></li>
+<li><p><a href="#non-equilibrium-greens-function-formalism">non-equilibrium Green’s function formalism</a></p></li>
+<li><p><a href="#&#x6709;&#x6548;&#x4ECB;&#x8D28;&#x7406;&#x8BBA;ema&#x590D;&#x5408;&#x4E13;&#x7528;04-07">有效介质理论(EMA)(复合专用)</a></p></li>
+</ul></p></li>
+<li><p><a href="#dft&#x8BA1;&#x7B97;&#x76F8;&#x5173;">DFT计算相关</a>
+<ul>
+<li><p><a href="#&#x8BA1;&#x7B97;&#x8868;&#x9762;&#x80FD;&#x516C;&#x5F0F;">计算表面能公式</a></p></li>
+<li><p><a href="#&#x8BA1;&#x7B97;&#x7F3A;&#x9677;&#x5F62;&#x6210;&#x80FD;&#x516C;&#x5F0F;">计算缺陷形成能公式</a></p></li>
+</ul></p></li>
+<li><p><a href="#&#x6709;&#x6548;&#x8D28;&#x91CF;&#x53CA;&#x7981;&#x5E26;&#x5BBD;&#x5EA6;">有效质量及禁带宽度</a>
+<ul>
+<li><p><a href="#&#x6709;&#x6548;&#x8D28;&#x91CF;&#x7684;&#x5B9E;&#x9A8C;&#x63A8;&#x5BFC;">有效质量的实验推导</a></p></li>
+<li><p><a href="#bi2te3&#x6216;&#x8005;sb2te3&#x80FD;&#x5E26;&#x5728;yz&#x5E73;&#x9762;&#x7684;&#x60C5;&#x51B5;06-02">Bi2Te3或者Sb2Te3能带在yz平面的情况</a></p></li>
+<li><p><a href="#&#x6709;&#x6548;&#x8D28;&#x91CF;&#x8BA1;&#x7B97;">有效质量计算</a></p></li>
+</ul></p></li>
+<li><p><a href="#&#x7981;&#x5E26;&#x5BBD;&#x5EA6;">禁带宽度</a>
+<ul>
+<li><p><a href="#&#x7D2B;&#x5916;&#x53EF;&#x89C1;&#x5149;&#x6F2B;&#x53CD;&#x5C04;&#x5149;&#x8C31;uvvis-diffuse-reflectance-spectra06-05">紫外可见光漫反射光谱(UV–Vis diffuse reflectance spectra)</a></p></li>
+<li><p><a href="#&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x4E0E;&#x6E29;&#x5EA6;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;06-06">禁带宽度与温度之间的关系</a></p></li>
+<li><p><a href="#&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x9884;&#x4F30;">禁带宽度预估</a>
+<ul>
+<li><p><a href="#&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x4E0E;&#x6700;&#x5927;seebeck&#x7CFB;&#x6570;&#x7684;&#x5173;&#x7CFB;06-07">禁带宽度与最大seebeck系数的关系</a></p></li>
+<li><p><a href="#&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x4E0E;&#x7535;&#x963B;&#x7387;&#x7684;&#x5173;&#x7CFB;">禁带宽度与电阻率的关系</a></p></li>
+</ul></p></li>
+</ul></p></li>
+<li><p><a href="#&#x529B;&#x5B66;&#x6027;&#x8D28;">力学性质</a>
+<ul>
+<li><p><a href="#&#x6768;&#x6C0F;&#x6A21;&#x91CF;">杨氏模量</a></p></li>
+<li><p><a href="#&#x526A;&#x5207;&#x6A21;&#x91CF;">剪切模量</a></p></li>
+<li><p><a href="#&#x6CCA;&#x677E;&#x6BD4;">泊松比</a></p></li>
+</ul></p></li>
+<li><p><a href="#zt&#x4E0E;&#x5668;&#x4EF6;&#x6548;&#x7387;">ZT与器件效率</a>
+<ul>
+<li><p><a href="#&#x7406;&#x8BBA;&#x8F6C;&#x5316;&#x6548;&#x7387;08-0108-02">理论转化效率</a></p></li>
+<li><p><a href="#&#x5E73;&#x5747;zt08-03">平均ZT</a></p></li>
+<li><p><a href="#pn&#x578B;&#x5171;&#x540C;&#x4F5C;&#x7528;&#x7684;zt&#x503C;">p/n型共同作用的ZT值</a></p></li>
+<li><p><a href="#&#x70ED;&#x7535;&#x5668;&#x4EF6;">热电器件</a>
+<ul>
+<li><p><a href="#&#x5668;&#x4EF6;&#x7406;&#x8BBA;">器件理论</a></p></li>
+</ul></p></li>
+<li><p><a href="#&#x70ED;&#x7535;&#x53D1;&#x7535;">热电发电</a>
+<ul>
+<li><p><a href="#&#x6709;&#x9650;&#x5143;&#x70ED;&#x7535;&#x5668;&#x4EF6;&#x539F;&#x7406;&#x7A33;&#x6001;&#x6761;&#x4EF6;&#x4E0B;08-09">有限元热电器件原理(稳态条件下)</a></p></li>
+<li><p><a href="#&#x70ED;&#x7535;&#x5236;&#x51B7;08-04">热电制冷</a></p></li>
+</ul></p></li>
+</ul></p></li>
+</ul></p></li>
+</ul>
+<h1 id="&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x70ED;&#x7535;&#x516C;&#x5F0F;&#x76F8;&#x5173;">欢迎来到热电公式相关</h1>
+<h2 id="xrd&#x8BA1;&#x7B97;&#x516C;&#x5F0F;">XRD计算公式</h2>
+<h3 id="&#x7EC7;&#x6784;&#x5EA6;&#x8BA1;&#x7B97;">织构度计算</h3>
+<h4 id="lotgering&#x6CD5;&#x8BA1;&#x7B97;&#x7EC7;&#x6784;&#x5EA6;">Lotgering法计算织构度</h4>
+<p>对于(hk0)面的织构度的计算公式如下<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：<br>
+$$F=\frac{P-P_{0}}{1-P_{0}}$$<br>
+$$P_{0}=\frac{I_0(hk0)}{\Sigma I_{0}(hkl)}$$<br>
+$$P=\frac{I(hk0)}{\Sigma I(hkl)}$$<br>
+$P_0$代表随机取向的样品所有(hk0)晶面与所有(hkl)晶面的比，$P$代表择优取向样品所有(hk0)晶面与所有(hkl)晶面的比。$F$成为织构度因子，又可以称为Lotgering因子。</p>
+<h2 id="&#x70ED;&#x7535;&#x8F93;&#x8FD0;&#x7406;&#x8BBA;&#x57FA;&#x7840;">热电输运理论基础</h2>
+<h3 id="&#x7535;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">电输运性质</h3>
+<h4 id="boltztmann-distribution&#x73BB;&#x5C14;&#x5179;&#x66FC;&#x5206;&#x5E03;&#x5218;&#x6069;&#x79D1;-&#x534A;&#x5BFC;&#x4F53;&#x7269;&#x7406;">Boltztmann distribution(玻尔兹曼分布)[刘恩科-半导体物理]</h4>
+<p>对于载流子浓度较低时，即$E-E_{F}\gg k_{B}T$时,由于$\exp \left(\frac{E-E_{F}}{k_{B}T}\right)\gg 1$,所以，<br>
+$$1+\exp \left(\frac{E-E_{F}}{k_{B}T}\right) \approx \exp \left(\frac{E-E_{F}}{k_{B}T}\right)$$<br>
+此时，费米分布函数就可以转化玻尔兹曼分布函数:<br>
+$$\begin{align}f_{B}(E) &amp;= \exp \left(-\frac{E-E_{F}}{k_{B}T}\right) \\&amp;=\exp\left(\frac{E_{F}}{k_{B}T}\right) \exp\left(-\frac{E}{k_{B}T}\right) \\&amp;= A\exp\left(-\frac{E}{k_{B}T}\right)\end{align}$$<br>
+其中,$A=\exp\left(\frac{E_{F}}{k_{B}T}\right)$.$k_{B}$代表玻尔兹曼常数，这就是熟知的玻尔兹曼统计分布。通常把服从玻尔兹曼统计规律的电子系统成为非简并系统，而服从费米统计规律的电子系统成为简并系统。</p>
+<h4 id="fermi-dirac-distribution&#x8D39;&#x7C73;&#x72C4;&#x62C9;&#x514B;&#x5206;&#x5E03;02-01">Fermi-Dirac distribution(费米狄拉克分布)<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h4>
+<p>$$f_{0}(E)=\left[\exp(\frac{E-E_{F}}{k_{B}T})+1\right]^{-1}$$<br>
+其中，$E$表示某一个电子态所占据能量，$f_{0}(E)$代表电子占据能量$E$的概率,$E_F$代表费米能级，其值取决于电子的总数量。当$(E-E_F)\gg kT$时，费米统计分布为0，当$(E-E_F)\ll kT$时，费米统计分布趋于1。</p>
+<h4 id="&#x7535;&#x5B50;&#x6570;&#x76EE;&#x4E0E;&#x8D39;&#x7C73;&#x72C4;&#x62C9;&#x514B;&#x5206;&#x5E03;&#x7684;&#x5173;&#x7CFB;02-01">电子数目与费米狄拉克分布的关系<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup></h4>
+<p>$$n=\int_{0}^{\infty} f_{0}(E)g(E)dE$$<br>
+其中，$n$代表总电子数目，$f_{0}$代表费米狄拉克统计分布,$g(E)$代表电子态密度。</p>
+<h4 id="&#x6001;&#x5BC6;&#x5EA6;&#x4E0E;&#x6709;&#x6548;&#x8D28;&#x91CF;&#x7684;&#x5173;&#x7CFB;02-01">态密度与有效质量的关系<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup></h4>
+<p>$$g(E)dE=\frac{4\pi(2m^{* })^{3/2}dE}{h^{3}}$$</p>
+<ul>
+<li><p>金属、半导体、绝缘体的分类<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup><br>
+$g(E)$电子态密度在导带底附近是非常小的，但是在带间变化极大。如果费米能级在导带内部，这样将会有大量的电子处于空态，固体将会有很好的导电性，最终会表现出金属的特性。而当费米能级处在带隙中时，在导带中没有电子的存在，材料将成为电子的绝缘体。当费米能级接近于导带底时，仅有少数电子对传导过程做贡献，这就是半导体。当费米能级在价带顶附近时，价带顶附近的能带将会有一些空带可以传导电子，尽管这个实际的传导过程仍然是负电荷的电子，有效质量仍然是负的，但在实际过程中我们最好描述成正的空穴，存在正的有效质量。</p></li>
+</ul>
+<h4 id="&#x73BB;&#x5C14;&#x5179;&#x66FC;&#x8F93;&#x8FD0;&#x7406;&#x8BBA;&#x63A8;&#x5BFC;02-01">玻尔兹曼输运理论推导<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup></h4>
+<p>通过引入驰豫时间的变量$\tau_{e}$,费米狄拉克分布$f_{0}(E)$相对于平衡值$f_{0}$之间存在如下关系，其实质就是导数的定义。<br>
+$$\frac{df(E)}{dt}=-\frac {f(E)-f_{0}(E)}{\tau_{e}}$$<br>
+其中$\tau_{e}$可用$\tau_{e}=\tau_{0}E^{r}$来表示，$\tau_{0}$和$r$分别代表给定的某一散射过程的常数。<br>
+假设费米狄拉克分布的扰动相对较小，那么基于玻尔兹曼方程，结合作用场和载流子散射过程，存在如下公式：<br>
+$$\frac{f(E)-f_{0}(E)}{\tau_e}=u \frac{df_{0}(E)}{dE}\left(\frac{dE_F}{dx}+\frac{(E-E_{F})}{T}\frac{dT}{dx}\right)$$<br>
+其中，$u$代表载流子在x方向的速度(其实质就是迁移率)，$E_{F}$代表费米能级<br>
+$$i=\mp \int_{0}^{\infty} eu f(E)g(E)dE$$<br>
+$$j=\int_{0}^{\infty}u (E-E_{F})f(E)g(E)dE$$<br>
+其中，$i$代表电流密度，$j$代表热流密度<br>
+当$f=f_{0}$时，$f$可以替换为$f-f_{0}$。此外载流子的歉意速率是总速率的一部分，可以将$u$写成$u=\frac{2E}{3m^{* }}$,因此上式可以写为:<br>
+$$i=\mp \frac{2e}{3m^{* }}\int_{0}^{\infty} g(E)\tau_{e}E \frac{df_{0}(E)}{dE} \left\{\frac{dE_{F}}{dx}+\frac{E-E_{F}}{T} \frac{dT}{dx}\right\}dE$$<br>
+$$j=\pm \frac{E_{F}}{e}i+\frac{2}{3m^{* }}\int_{0}^{\infty} g(E)\tau_{e}E^{2} \frac{df_{0}(E)}{dE} \left\{\frac{dE_{F}}{dx}+\frac{E-E_{F}}{T} \frac{dT}{dx}\right\}dE$$<br>
+最终热电的三个性能指标分别为(<strong>此处怀疑有错误</strong>):<br>
+$$\sigma=\frac{1}{\rho}=-\frac{2e^{2}}{3m^{* }} \int_{0}^{\infty}g(E)\tau_{e}E\frac{df_{0}(E)}{dE}dE$$<br>
+$$\kappa_{e}=\frac{2}{3m^{* }T}&lt;\left\{\frac{\left[\int_{0}^{\infty} g(E)\tau_{e}E^{2}\frac{df_{0}(E)}{dE}dE\right]^{2}}{\int_{0}^{\infty} g(E)\tau_{e}E\frac{df_{0}(E)}{dE}dE} \right\}\\-\int_{0}^{\infty}g(E)\tau_{e}E^{3}\frac{df_{0}(E)}{dE}dE&gt;$$<br>
+$$\alpha=\pm\frac{1}{eT}\left[E_{F}-\frac{\int_{0}^{\infty}g(E)\tau_{e}E^{2}\frac{df_{0}(E)}{dE}dE} {\int_{0}^{\infty}g(E)\tau_{e}E\frac{df_{0}(E)}{dE}dE}\right]$$<br>
+观察可知上面表达式中的积分表达式可以简化为一个通式:<br>
+$$K_{s}= -\frac{2T}{3m^{* }}\int_{0}^{\infty}g(E)\tau_{e}E^{s+1}\frac{df_{0}(E)}{dE}dE$$<br>
+根据以上的关系，我们可以将$g$,$\tau_{e}$转化为$m^{* }$,$\tau_{0}$,和$r$的表达式：<br>
+$$K_{s}=\frac{8\pi}{3}\left(\frac{2}{h^{2}}\right)^{3/2}(m^{* })^{1/2}T \tau_{0}(s+r+3/2)(kT)^{s+r+3/2}F_{s+r+1/2}(\xi)$$<br>
+其中$F_{n}(\xi)$可以表示为:<br>
+$$F_{n}(\xi)=\int_{0}^{\infty}\xi^{n}f_{0}(\xi)d\xi=\int_{0}^{\infty} \frac{\xi^{n}}{1+\exp(\xi-\eta)}d\xi$$<br>
+其中$\xi$为简约能级，其表达式为$\xi=\frac{E}{kT}$,$F_{n}(\xi)$代表费米积分表达式。表3.1为费米积分与简约费米能级$\eta$的数值关系。$\eta=E_{F}/kT$<br>
+这样上面的表达式可以简化为(<em>注:此处有问题，疑似introduction有问题，$\sigma$这个表达式中应该是$K_0$,introduction中为$K_{1}$</em>):<br>
+$$\sigma=\frac{e^{2}}{T}K_{0}$$<br>
+$$\kappa_{e}=\frac{1}{T^{2}}\left(K_{2}-\frac{K_{1}^{2}}{K_{0}}\right)$$<br>
+$$\alpha=\pm\frac{1}{eT}\left(E_{F}-\frac{K_{1}}{K_{0}}\right)$$<br>
+根据以上三个式子外加$$\kappa=\kappa_{L}+\kappa_e$$可以推导出最终的ZT值。<br>
+$$\kappa_{e}=L\sigma T$$<br>
+$$\begin{align}L&amp;=\frac{1}{e^{2}T^{2}}\left(\frac{K_{2}}{K_{0}}-\frac{K_{1}^{2}}{K_{0}^{2}}\right) \\&amp;=\left(\frac{k_{B}}{e}\right)^{2}\left(\frac{(r+7/2)F_{r+5/2}(\eta)}{(r+3/2)F_{r+1/2}(\eta)}-\left[\frac{(r+5/2)F_{r+3/2}(\eta)}{(r+3/2)F_{r+1/2}(\eta)}\right]^{2}\right)\end{align}$$<br>
+当声学声子散射占主导($r=-1/2$)时，洛伦兹常数有如下关系[^36]<br>
+$$L = \left(\frac{k_{B}}{e}\right)^{2} \left(\frac{3F_0(\eta)F_2(\eta)-4F_{1}^{2}(\eta)}{F_{0}(\eta)} \right)$$<br>
+通常而言，我们采用表格3.1和3.2中的费米积分值来计算热电输运参数。</p>
+<ul>
+<li><p>简并半导体<br>
+然而，这种从带边测量费米能得到的费米积分要么比$kT$大很多，要么远小于$-kT$.当$E_{F} \gg kT$时，导电介质为金属或者简并半导体模型。当$E_{F}&gt;4kT$时，即可归为简并半导体。对于简并半导体，费米积分有如下关系:<br>
+$$F_{n}(\eta)=\frac{\eta^{n+1}}{n+1}+n\eta^{n-1}\frac{\pi^{2}}{6}+n(n-1)(n-2)\eta^{n-3}\frac{7\pi^{4}}{360}\cdots$$<br>
+这个级数快速收敛，对于问题求解，我们仅抽取合理近似值即可。<br>
+对于电导率的计算，仅需计算费米积分级数一级近似即可。<br>
+$$\sigma=\frac{e^{2}}{T}K_{0}=\frac{8\pi}{3}\left(\frac{2}{h^{2}}\right)^{3/2}e^{2}(m^{* })^{1/2}\tau_{0}E_{F}^{r+3/2}$$<br>
+为了获得电子热导，可以取费米积分级数的二级近似来计算,其洛伦兹常数可以简化为:<br>
+$$L=\frac{\pi^{2}}{3}(\frac{k_{B}}{e})^{2}$$<br>
+在金属中，电子热导通常比晶格热导大得多，符合魏德曼弗朗兹定律(wiedemann-Franz Law)<br>
+seebeck系数求解要求去费米积分级数的前两项,得到:<br>
+$$\alpha=\mp \frac{\pi^{2}}{3}\frac{k_B}{e}\frac{(r+3/2)}{\eta}$$</p></li>
+<li><p>非简并半导体<br>
+当半导体中没有太多杂质时通常表现出经典的半导体性质(非简并)，即$E_{F}&lt;-2 k_{B}T$时，可以近似为非简并半导体。当处于非简并条件下，费米狄拉克积分可以表示为:<br>
+$$F_{n}(\eta)=\exp (\eta)\int_{0}^{\infty}\xi^{n}\exp(-\xi)d\xi=\exp(\eta)\Gamma(n+1)$$<br>
+其中$\Gamma$函数可以表示为:<br>
+$$\Gamma(n+1)=n\Gamma(n)$$<br>
+当n为整数时，$\Gamma(n+1)=n!$,当n为半整数(0.5的奇数倍时)也可以用$\gamma$函数计算，$\Gamma(1/2)=\pi^{1/2}=\sqrt{\pi}$<br>
+在非简并条件下,$K_{s}$可以表示为如下形式:<br>
+$$K_{s}=\frac{8\pi}{3}\left(\frac{2}{h^{3}}\right)^{3/2}(m^{* })^{1/2}T \tau_{0}(k_{B}T)^{s+r+3/2}\Gamma(s+r+5/2)\exp(\eta)$$<br>
+则电导率可以表示为:<br>
+$$\sigma=\frac{8\pi}{3}\left(\frac{2}{h^{3}}\right)^{3/2}e^{2}(m^{* })^{1/2}T\tau_{0}(k_{B}T)^{r+3/2}\Gamma(r+5/2)\exp(\eta)$$<br>
+通常$\sigma=ne\mu$,$n$代表载流子浓度,$\mu$代表载流子迁移率。$\mu$在经典条件下(非简并半导体)与费米能无关。$n$和$\mu$可以表示为:<br>
+$$n=2\left(\frac{2\pi m^{* }k_{B}T}{h^{2}}\right)^{3/2}\exp(\eta)$$<br>
+$$\mu=\frac{4}{3\sqrt{\pi}}\Gamma(r+\frac{5}{2})\frac{e\tau_{0}(k_{B}T)^{r}}{m^{* }}$$<br>
+在非简并条件下,seebeck系数可以表示为:<br>
+$$\alpha=\mp\frac{k_{B}}{e}\left[\eta-\left(r+\frac{5}{2}\right)\right]$$<br>
+对于非简并态的洛伦兹常数，其表达式如下:<br>
+$$L=\left(\frac{k_{B}}{e}\right)^{2}\left(r+\frac{5}{2}\right)$$<br>
+在整个非简并的范围内，洛伦兹常数与费米积分无关，尽管半导体的洛伦兹常数与金属的洛伦兹常数相差很小，但是半导体通常不满足魏德曼弗朗兹定律(wiedemann-Franz Law)</p></li>
+</ul>
+<h3 id="&#x70ED;&#x8F93;&#x8FD0;&#x6027;&#x8D28;02-01">热输运性质<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup></h3>
+<p>在固体材料中，每个原子与近邻原子都存在相互作用，这样任意一个原子发生偏移都会导致其余原子发生扰动。原子始终处于不断振动状态中，综合考虑的话我们可以将之当为波，根据本质划分为纵波和横波。在低频下，振动即为我们熟悉的声波，对于热传导，我们更关心的是高频态。<br>
+对于一个固体材料，其总的振动模式数目为$3N$，其中$N$为单胞中的原子数目。根据Debye理论，在频率为$\nu$到$\nu+d\nu$范围内，单位体积中的振动模式数目为：<br>
+$$n_{L}=\frac{2\pi\nu^{3}d\nu}{v^{3}}$$<br>
+其中，$v$代表声速。为了时总振动模式为$3N$则有:<br>
+$$\frac{4\pi\nu_{D}^{3}}{v^{3}}=3N$$<br>
+根据玻色-爱因斯坦统计而非费米狄拉克统计，我们可以得出振动频率为$\nu$的能量$W$可以表示为:<br>
+$$W=h\nu\left[\exp\left(\frac{h\nu}{k_{B}T}\right)-1\right]^{-1}$$<br>
+其定容比热$C_{V}$可以表示为:<br>
+$$C_{V}=9N k_{B}\left(\frac{T}{\theta_{D}}\right)^{3}\;f_{D}\left(\frac{\Theta_{D}}{T}\right)$$<br>
+其中$\Theta_{D}$为德拜温度(Debye温度),<br>
+$$\Theta_{D}=\frac{h\nu_{D}}{k_{B}}$$<br>
+$$f_{D}\left(\frac{\Theta_{D}}{T}\right)=\int_{0}^{\infty}\frac{x^{4}\exp(x)}{\left(\exp(x)-1\right)^{2}}dx$$<br>
+更详细的讨论晶格振动，需要区分纵波和横波。因此有必要区分群速度和相速度。群速度为$2\pi d\nu / dq_{L}$,相速度为$2\pi \nu / q_{L}$。如果单胞中有n个原子，那么将有三个声学支(一个纵波，两个横波)和(3(n-1))个光学支。<br>
+Debye可以用连续弹性模型解释单一绝缘体的热导率与随温度增加迅速变小的变化规律，但是无法解释热导率是有限值的问题。只有当热振动是反谐振，热导才是有限的。Peierls通过考虑反谐振的概念，成功解释了有杂质存在的情况下的热阻现象。<br>
+Peierls首次引入了声子或者量子化振动波包的概念。声子交互作用应该存在两个过程，N过程和U过程。N过程中，声子动量守恒，而U过程中，声子动量不守恒。对于U过程，如果将晶体的变换考虑进去的时候，动量是守恒的。<br>
+因此，晶格热导可以表示为如下关系:<br>
+$$\kappa_{L}=C_{V}vl_{t}/3$$<br>
+其中，$C_{V}$代表定容比热，$v$代表平均声速,$l_{t}$代表声子平均自由程。</p>
+<ul>
+<li><p>晶格热导
+<ul>
+<li><p>(经典动力学理论)[^5]<br>
+$$\kappa_{L}=\frac{1}{3}C_{v}l\nu_{s}$$<br>
+$C_v$代表定容比热，$l$代表声子平均自由程，$\nu_{s}$代表平均声速<br>
+当温度在德拜温度以上时，$C_v$达到经典的值3R:<br>
+$C_v=3R$<br>
+此时，晶格热导取决于$l$,$l$主要受声学声子散射的影响。<br>
+根据keyes’ 表达式，晶格热导主要受一下参数影响:<br>
+$$\kappa_{latt}T=\frac{R^{3/2}}{3\gamma^{2}\varepsilon^{3} N_{0}^{1/3}} \frac{T_m^{3/2}\rho^{2/3}}{A^{7/6}}$$<br>
+其中$T_m$代表熔点，$A$代表平均原子质量，$\gamma$代表格林艾森常数，$\varepsilon$代表原子间热振动的分振幅，$R$代表理想气体常数，$N_0$代表阿伏伽德罗常数，$\rho$代表密度。</p></li>
+<li><p>晶格热导的德拜模型<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+$$\kappa_{L}=\frac{k_{B}}{2\pi^2 v}{(\frac {k_B T}{\hbar})^3}\{\int_{0}^{\theta_{D}/T} \tau_c \frac{x^{4}e^{x}}{(e^{x}-1)^2}dx+\\ \frac{[ \int_{0}^{\theta_{D}/T} \frac{\tau_{c}}{\tau_{N}}\frac{x^{4}e^{x}}{(e^{x}-1)^2}dx ]^2}{\int_{0}^{\theta_{D}/T} \frac{1}{\tau_{N}}(1-\frac{\tau_{c}}{\tau_{N}})\frac{x^{4}e^{x}}{(e^{x}-1)^2}dx} \}$$<br>
+其中$k_B$代表玻尔兹曼常数，$\hbar$代表简约普朗克常数，$\hbar=\frac{h}{2\pi}$，$T$代表绝对温度，$\theta_{D}$代表德拜温度，$v$代表平均声子群速度，$x={\hbar \omega}/{k_{B}T}$，$\tau_{N}$代表N过程的声学声子散射的驰豫时间，$\tau_{c}$代表联合驰豫时间，$\tau_{c}$可以通过各个驰豫时间的联立求得，对于给定的频率，驰豫时间可以通过主要与应力散射，纳米沉积物，位错，边界和声子-声子交互作用有关。<br>
+$$\tau_{c}^{-1}=\tau_{U}^{-1}+\tau_{N}^{-1}+\tau_{B}^{-1}+\tau_D^{-1}+\tau_{P}^{-1}+\tau_{S}^{-1}$$<br>
+其中，$\tau_{U}^{-1}$代表Umklapp过程的弛豫时间，$\tau_{N}^{-1}$代表标准声子-声子散射的弛豫时间，$\tau_{B}^{-1}$代表晶界散射的驰豫时间，$\tau_{D}^{-1}$代表位错的弛豫时间，$\tau_{P}^{-1}$代表沉积物的驰豫时间，$\tau_{S}^{-1}$代表应力的弛豫时间。</p></li>
+<li><p>keyes关系<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
+对于同一族属的材料来说，随着平均原子质量增大，晶格热导逐渐境地。此外，碱金属-卤素类化合物的热导率比金刚石型元素单质和III-V族化合物小了一个数量级。热电材料渴望具有非常低的热导率，从这个角度考虑，离子型化合物是一个很好的选择。然而，离子型化合物的迁移率非常小，导致功率因子很低，因此在热电材料的选择上来说，我们一般选择强的共价键化合物。<br>
+keyes提出了一个晶格热导与熔点$T_{m}$的近似关系，称为Keyes关系。<br>
+$Leibfried$和$schl\ddot{o}mann$采用变分发得到了晶格热导与反谐振晶格波的关系:<br>
+$$\kappa_{L}=3.5\left(\frac{k_{B}}{h}\right)^{3}\frac{MV^{1/3}\Theta_{D}^{3}}{\gamma^{2}T}$$<br>
+其中，$M$代表平均原子质量,$V$代表平均原子体积，$\Theta_{D}$代表Debye温度,$\gamma$代表格林艾森常数($Gr\ddot{u}eisen$ parameter),$T$代表绝对温度。格林艾森常数是一个与热膨胀系数和反谐振性有关的参数。<br>
+Dugale和MacDDonald根据$\kappa_{L}=C_{V}vl_{t}/3$以及$l_{t}=\frac{a}{\alpha_{T}\gamma T}$公式得到：<br>
+$$\kappa_{L}=\frac{C_{V}av}{3\alpha_{T}\gamma T}$$<br>
+其中，$C_{V}$代表定容比热，$a$代表晶格常数，$v$代表平均声速，$\alpha_{T}$代表热膨胀系数，$\gamma$代表格林艾森常数($Gr\ddot{u}eisen$),$T$代表绝对温度。<br>
+其中热膨胀系数根据德拜方程可知:<br>
+$$\alpha_{T}=\frac{\chi\gamma C_{V}}{3}$$<br>
+其中$\chi$表示压缩系数。<br>
+而声速又可以根据Debye温度求解:<br>
+$$v=(\rho_{d}\chi)^{-1/2}=\frac{2k_{B}a\Theta_{D}}{h}$$<br>
+其中，$\rho_{d}$代表密度，$h$代表普朗克常量。因此晶格热导可以修正为:<br>
+$$\kappa_{L}=8\left(\frac{k_{B}}{h}\right)^{3}\frac{MV^{1/3}\Theta_{D}^{3}}{\gamma^{2}T}$$<br>
+其中，$M$代表平均原子质量，$V$代表平均原子体积，$\gamma$代表格林艾森常数，$T$代表绝对温度，$\Theta_{D}$代表Debye温度。<br>
+Keyes目标是合成出某种物质后立即能够估算出该物质的晶格热导。因此上式时不充分的。上式中需要知道热膨胀系数，声速等等。因此，Keyes采用Lawson关系(Lawson’s relation):<br>
+$$\kappa_{L}=\frac{a}{3\gamma^{2}T\chi^{3/2}\rho_{d}^{1/2}}$$<br>
+其中$\rho_{d}$表示密度,$a$代表晶胞常数,$\gamma$代表格林艾森常数,$T$代表绝对温度,$\chi$代表压缩系数。<br>
+keyes采用Lindemann熔化法则:<br>
+$$T_{m}=\frac{\varepsilon_{m}V}{R\chi}$$<br>
+其中，$R$是普适气体常数,$T_{m}$代表融化稳定。该式表明对于一个固体，当原子振动达到晶格常数某一个分数$\varepsilon_{m}$时，固体就会熔化，$\varepsilon_{m}$对于所有物质几乎都是一样的。因此，最终的Keyes关系为:<br>
+$$\begin{align}\kappa_{L}T &amp;= B_{K}\frac{T_{m}^{3/2}\rho_{d}^{2/3}}{A^{7/6}} \\&amp;=\frac{R^{3/2}}{3\gamma^{2}\varepsilon_{m}^{3}N_{A}^{1/3}}\;\frac{T_{m}^{3/2}\rho_{d}^{2/3}}{A^{7/6}}\end{align}$$<br>
+其中$N_{A}$是阿伏伽德罗常数，$A$是平均原子质量,$B_{K}$是一个几乎不变的常量,因为与之相关的$\gamma$和$\varepsilon_{m}$几乎不随材料变化而变化。</p></li>
+</ul></p></li>
+<li><p>Keyes’ 表达式<br>
+假设晶格热导主要由声学声子散射做贡献时<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><br>
+$$\kappa_{L}T=\frac{R^{3/2}}{3\gamma^{2}\varepsilon^{3}N_{0}^{1/3}}\cdot \frac{T_{m}^{3/2}\rho^{2/3}}{A^{7/6}}$$<br>
+其中,$T_{m}$代表熔点，$A$代表平均原子质量，$\gamma$代表格林艾森常数，$\varepsilon$代表原子间热振动的分振幅，$R$代表理想气体常数，$N_{0}$代表阿伏伽德罗常量，$\rho$代表样品密度。</p></li>
+</ul>
+<h2 id="&#x7535;&#x5B66;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">电学输运性质</h2>
+<h3 id="&#x975E;&#x7B80;&#x5E76;&#x534A;&#x5BFC;&#x4F53;&#x7ECF;&#x5178;&#x6A21;&#x578B;">非简并半导体(经典模型)</h3>
+<ul>
+<li><p>张老师常用<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup><br>
+$$\rho= \frac{1}{ne\mu}$$<br>
+$$\alpha =\frac{k_{B}}{e}(r-\ln \frac{n}{N_{0}})$$<br>
+其中$\rho$代表电阻率,$n$代表载流子浓度，$e$代表电荷量，$\mu$代表迁移率，$\alpha$代表seebeck系数，$\kappa_{B}$代表玻尔兹曼常数，$r$代表散射因子，$N_{0}$代表阿伏伽德罗常量。</p></li>
+</ul>
+<ul>
+<li><p>非简并半导体<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup><br>
+$$\alpha=\mp \frac{k_{B}}{e}\left(\frac{5}{2}+r-\xi \right)$$<br>
+其中$\mp$分别表示电子或者空穴的贡献。$\xi$代表简约费米能级,$\xi=\frac{E_{F}}{k_{B}T}$，$k_{B}$代表玻尔兹曼常数,$T$代表绝对温度,$r$代表散射因子，它被认为驰豫时间与载流子能量之间存在简单的逻辑关系，如:$\tau=E^{r}$<br>
+$$\sigma=ne \mu_{c}$$<br>
+其中，$\sigma$代表电导率，$n$代表(化学)载流子浓度，$e$代表电荷量，$\mu_{c}$代表(化学)载流子迁移率。<br>
+$$n=2 (\frac{2\pi m^{* }k_{B}T}{h^{2}})^{3/2}\exp \xi$$<br>
+其中,$m^{* }$代表有效质量.<br>
+$$\kappa=\kappa_{e}+\kappa_{L}$$<br>
+其中,$\kappa$代表热导率，$\kappa_{e}$代表电子热导，$\kappa_{L}$晶格热导。<br>
+此外，$\kappa_{e}=\mathcal{L}_{0}(\frac{k_{B}}{e})^{2}\sigma T$,$\mathcal{L}_{0}$代表洛伦兹因子(<strong>区别与洛伦兹常数</strong>),在载流子浓度较低的情况下，存在如下关系$\mathcal{L}_{0}=(5/2+r)$<br>
+最终，在低载流子浓度(非简并半导体情况)存在如下关系:<br>
+$$Z=\frac{(5/2+s-\xi)^{2}}{\left \{2\frac{k_{B}^{2}}{e}FG \exp \xi \right \}^{-1}+(5/2+s)T}$$<br>
+其中:<br>
+$$F=\frac{\mu_{c}}{\lambda_{L}}\left(\frac{m^{* }}{m}\right)^{3/2}$$<br>
+$$G=(\frac{2\pi m k_{B}T}{h^{2}})^3/2$$</p></li>
+</ul>
+<p>对于$Z$值，存在最佳的简约费米能级,即$\frac{dZ}{d\xi}=0$时，存在最大的Z值，通过求导可以推出:<br>
+$$\xi_{opt}+4(5/2+r)\frac{k_{B}^{2}}{e}FGT \exp \xi_{opt}=\frac{1}{2}+r$$<br>
+通常，对于晶格热导对总热导的贡献占主导，忽略上式第二项，即$\lambda_{e}$项，有如下关系:<br>
+$$\xi_{opt}=r+\frac{1}{2}$$<br>
+其中，声学声子散射占主导时，$r=-1/2$，当离化杂质散射占主导时$r=+3/2$，对应的最佳简约费米能级$\eta_{opt}$分别为0和2.<br>
+同样的，对于最大Z值，存在最优的seebeck系数值,$dZ/d\alpha =0$，<br>
+$$\alpha=-2\frac{k_{B}}{e}[1+(\kappa_{e}/\kappa_{L})]=-172[1+(\kappa_{e}/\kappa_{L})] \mu V/K$$</p>
+<h3 id="&#x7B80;&#x5E76;&#x534A;&#x5BFC;&#x4F53;">简并半导体</h3>
+<h4 id="&#x5355;&#x629B;&#x7269;&#x5E26;">单抛物带</h4>
+<h5 id="seebeck&#x7CFB;&#x6570;">Seebeck系数</h5>
+<ul>
+<li><p>声子散射占主导即$s=-\frac{1}{2}$时有以下公式:<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup><br>
+$$\begin{align}\alpha&amp;= \frac {k_{B}} {e} \left [\frac{2F_{1} (\xi)}{F_{0}(\xi)}-\xi \right] \\\end{align}$$<br>
+其中$\alpha$代表seebeck系数，$k_B$代表玻尔兹曼常数，$e$代表电荷量，$F_{r}$代表代表与r相关的费米积分，$\xi$代表简约费米能级($\xi=\frac{E_{F}}{k_{B}T}$),<br>
+$$F_{r}(\xi)=\int_{0}^{\infty} \frac {x^{r}dx}{1+e^{x-\xi}}$$</p></li>
+</ul>
+<ul>
+<li><p>不考虑散射因子时有以下公式:<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup><br>
+<strong>$$\begin{align}\alpha&amp;= \mp \frac {k_{B}} {e} \left [\eta_{F}-\frac{(r+5/2)F_{r+3/2} (\eta_{F})}{(r+3/2)F_{r+1/2}(\eta_{F})} \right] \\\end{align}$$</strong><br>
+其中$\alpha$代表seebeck系数，$k_B$代表玻尔兹曼常数，$e$代表电荷，$F_{i}(\eta_{F})$代表费米狄拉克积分函数，$\eta_{F}$代表简约费米能级($\eta_{F}=\frac{E_{F}}{k_{B}T}$)，$r$代表散射因子.<br>
+$$L=\frac{(r+7/2)F_{r+5/2}(\eta)}{(r+3/2)F_{r+1/2}(\eta)}-\left[\frac{(r+5/2)F_{r+3/2} (\eta_{F})}{(r+3/2)F_{r+1/2}(\eta_{F})}\right]^{2}$$<br>
+$$F_{i}(\eta_{F})=\int_{0}^{\infty} \frac {x^{i}dx}{1+e^{x-\eta_{F}}}$$</p></li>
+</ul>
+<h5 id="&#x8F7D;&#x6D41;&#x5B50;&#x6D53;&#x5EA6;">载流子浓度</h5>
+<ul>
+<li><p>声子散射占主导即$s=-\frac{1}{2}$时有以下公式:<sup class="footnote-ref"><a href="#fn8" id="fnref8:1">[8]</a></sup><br>
+$$n=4\pi \left(\frac{2m^* k_{B}T}{h^2}\right)^{3/2} F_{1/2}(\eta_{F})$$<br>
+其中$n$表示载流子浓度，$m^*$代表有效质量，$k_B$代表玻尔兹曼常数，$\eta_{F}$代表简约费米能级($\eta_{F}=\frac{E_{F}}{k_{B}T}$)，$s$代表散射因子，$F_{i}(\eta_{F})$代表费米狄拉克积分函数，其定义上同$F_{i}(\eta_{F})=\int_{0}^{\infty} \frac {x^{i}dx}{1+e^{x-\eta_{F}}}$。</p></li>
+</ul>
+<h5 id="&#x6D1B;&#x4F26;&#x5179;&#x5E38;&#x6570;lorentz-number">洛伦兹常数(lorentz number)</h5>
+<ul>
+<li><p>声子散射占主导即$s=-\frac{1}{2}$时有以下公式:<sup class="footnote-ref"><a href="#fn7" id="fnref7:1">[7]</a></sup><br>
+$$\begin{align}L &amp;= \left(\frac{k_{B}}{e}\right)^{2} \left(\frac{3F_0(\xi)F_2(\xi)-4F_{1}^{2}(\xi)}{F_{0}(\xi)} \right) \\\end{align}$$</p></li>
+</ul>
+<h4 id="&#x5355;kane&#x5E26;">单Kane带</h4>
+<h4 id="&#x53CC;&#x629B;&#x7269;&#x5E26;">双抛物带</h4>
+<ul>
+<li><p>电导率<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup><br>
+$$\sigma_{total}= \sigma_{1}+\sigma_{2}$$<br>
+对于双带模型来说，总电导率为两条能带的电导贡献之和。</p></li>
+<li><p>Seebeck系数<sup class="footnote-ref"><a href="#fn9" id="fnref9:1">[9]</a></sup><br>
+$$\alpha_{total}=(\sigma_{1}\alpha_{1}+\sigma_{2}\alpha_{2})/\sigma_{total}$$<br>
+假设仅有两条带起作用，$\sigma_{total}= \sigma_{1}+\sigma_{2}$</p></li>
+</ul>
+<h4 id="snte&#x6A21;&#x578B;&#x629B;&#x7269;&#x5E26;kane&#x5E26;">SnTe模型(抛物带+kane带)</h4>
+<h4 id="wiedemann-franz-law&#x9B4F;&#x5FB7;&#x66FC;-&#x5F17;&#x6717;&#x5179;&#x5B9A;&#x5F8B;">wiedemann-Franz Law(魏德曼-弗朗兹定律)</h4>
+<ul>
+<li><p><strong>魏德曼-弗朗兹定律</strong><br>
+<strong>适用对象:金属或者简并半导体</strong><br>
+$$\kappa_{e}=L \sigma T$$<br>
+$L$代表洛伦兹常数，$\sigma$代表电导率，$T$代表绝对温度，$\kappa_{e}$代表载流子热导。</p></li>
+</ul>
+<h4 id="lorentz-number&#x6D1B;&#x4F26;&#x5179;&#x5E38;&#x6570;"><strong>lorentz number</strong>(洛伦兹常数)</h4>
+<ul>
+<li><p>洛伦兹常数的上限<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup><br>
+<strong>适用对象：简并半导体或者金属</strong><br>
+$$L=\frac{\pi^{2}k_B^{2}}{3e^2}=2.45\times10^{-8} W\cdot\Omega K^{-2}$$<br>
+$k_B$代表玻尔兹曼常数，$e$代表电荷量，$L$代表洛伦兹常数</p></li>
+<li><p>Snyder提出的洛伦兹常数简化式<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup><br>
+$$L=1.5+\exp \left[-\frac{|\alpha|}{116} \right]$$<br>
+其中，$L$代表洛伦兹常数,本式中的单位为$10^{-8}\,W\Omega K^{-2}$,$|\alpha|$代表seebeck系数，本式中单位为$\mu V/K$.该方程基于单抛物带/声学声子散射假设，其误差为5%。对于非抛物Kane带/多带/其他散射机制的情况如PbSe，PbS，PbTe，SiGe等情况的误差为20%。</p></li>
+</ul>
+<h4 id="mott&#x65B9;&#x7A0B;03-0803-0903-0503-1003-11">mott方程<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup><sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup><sup class="footnote-ref"><a href="#fn9" id="fnref9:2">[9]</a></sup><sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup><sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup></h4>
+<p>$$\begin{align}S &amp;=\frac {\pi^{2}}{3} \frac{k_{B}^2T}{e} \frac {d\ln\sigma(E)}{dE}\mid_{E=E_f} \\ &amp;=\frac {\pi^{2}}{3} \frac{k_{B}^2T}{e} \frac {d\sigma(E)}{\sigma(E)dE}\mid_{E=E_f} \\ &amp;=\frac {\pi^{2}}{3} \frac{k_{B}^2T}{e} [\frac{1}{n} \frac{d n(E)}{dE}+\frac{1}{\mu} \frac{d \mu(E)}{dE}] _ {E=E_f} \end{align}$$<br>
+$\sigma{(E)}$代表电导率与费米能之间的函数关系</p>
+<h4 id="&#x6563;&#x5C04;&#x56E0;&#x5B50;&#x7684;&#x7C7B;&#x578B;03-12-&#x8000;&#x6625;&#x54E5;&#x535A;&#x58EB;&#x8BBA;&#x6587;">散射因子的类型<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup> (耀春哥博士论文)</h4>
+<table>
+<thead>
+<tr><th style="text-align:center">散射机制</th><th style="text-align:center">散射因子</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">声学声子散射</td><td style="text-align:center">$-1/2$</td></tr>
+<tr><td style="text-align:center">光学声子散射</td><td style="text-align:center">$1/2$</td></tr>
+<tr><td style="text-align:center">离化杂质散射</td><td style="text-align:center">$3/2$</td></tr>
+<tr><td style="text-align:center">合金散射</td><td style="text-align:center">$-1/2$</td></tr>
+<tr><td style="text-align:center">中性杂质散射</td><td style="text-align:center">$0$</td></tr>
+</tbody>
+</table>
+<h4 id="seebeck&#x7CFB;&#x6570;&#x4E0E;&#x4E24;&#x79CD;&#x8F7D;&#x6D41;&#x5B50;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;03-13">Seebeck系数与两种载流子之间的关系<sup class="footnote-ref"><a href="#fn17" id="fnref17">[17]</a></sup></h4>
+<p>$$\alpha \approx \frac{(\alpha_{n}\sigma_{n}+\alpha_{p}\sigma_{p})}{(\sigma_{n}+\sigma_{p})}$$<br>
+其中$\alpha$代表总得Seebeck系数，$\alpha_{n}$和$\alpha_{p}$分别代表n型和p型载流子所提供的seebeck系数，$\sigma_{n}$和$\sigma_{p}$分别代表n型和p型载流子所提供的seebeck系数</p>
+<h4 id="pisarenko-relation&#x76AE;&#x8428;&#x8FDE;&#x79D1;&#x66F2;&#x7EBF;">pisarenko relation(皮萨连科曲线)</h4>
+<ul>
+<li><p>简并半导体<sup class="footnote-ref"><a href="#fn18" id="fnref18">[18]</a></sup><sup class="footnote-ref"><a href="#fn19" id="fnref19">[19]</a></sup><sup class="footnote-ref"><a href="#fn20" id="fnref20">[20]</a></sup><br>
+$$S=\frac{8 \pi^{2}k_{B}^{2}T}{3 e h^{2}} m_{d}^{* } (\frac {\pi}{3n})^{2/3}$$<br>
+披萨联科关系，其中$S$代表seebeck系数，$k_B$代表玻尔兹曼常数，$T$代表绝对温度，$e$代表载流子电荷量，$h$代表普朗克常量，$m_{d}^{* }$代表费米能级处的有效质量。$n$代表载流子浓度。</p></li>
+</ul>
+<ul>
+<li><p>简单的双带模型<sup class="footnote-ref"><a href="#fn21" id="fnref21">[21]</a></sup><br>
+$$S=\pm \frac{k}{e} \left[r+2\ln \frac{2(2\pi m^{* }kT)^{3/2}}{nh^{3}}\right]$$</p></li>
+</ul>
+<h4 id="&#x53CC;&#x6781;&#x6269;&#x6563;">双极扩散</h4>
+<p>双极扩散影响因素<sup class="footnote-ref"><a href="#fn22" id="fnref22">[22]</a></sup><br>
+双极扩散主要是由于电子-空穴对的生成和湮灭造成的。双极热导与偏分电导$\sigma_{i}$和偏分seebeck系数(\alpha_{i})有关(其中电子传导时，下标i为n，当空穴传导时，下标i为p)。<br>
+$$\kappa_{b}=\frac{\sigma_{p}\sigma_{n}}{\sigma_{p}+\sigma_{n}}\left(\alpha_{p}-\alpha_{n}\right)^{2}T$$</p>
+<h4 id="&#x590D;&#x5408;&#x7ED3;&#x6784;&#x7535;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">复合结构电输运性质</h4>
+<ul>
+<li><p>复合结构或者多空结构电导率计算公式<sup class="footnote-ref"><a href="#fn23" id="fnref23">[23]</a></sup><br>
+$$(1-{\Phi})\frac{\sigma^{* }-\sigma}{\sigma^{* }+2\sigma}+ \Phi \frac{\sigma_{g}-\sigma}{\sigma_{g}+2\sigma}=0$$<br>
+$\sigma^{* }$代表主晶相的电导率，$\sigma_{g}$代表气孔相的电导率，$\sigma$代表测试的电导率，$\Phi$代表块体的气孔率，假设气孔相为绝热的，即$\sigma_{g}=0$，则存在以下关系：<br>
+$$\sigma=\frac{2-3\Phi}{2}\sigma^{* }$$</p></li>
+</ul>
+<p>1</p>
+<h2 id="&#x70ED;&#x8F93;&#x8FD0;&#x6027;&#x8D28;">热输运性质</h2>
+<h3 id="&#x70ED;&#x5BB9;cp&#x7406;&#x8BBA;&#x503C;">热容Cp理论值</h3>
+<ul>
+<li><p>低温热容理论表达式(德拜温度以下)<sup class="footnote-ref"><a href="#fn24" id="fnref24">[24]</a></sup><sup class="footnote-ref"><a href="#fn25" id="fnref25">[25]</a></sup><br>
+$$C_p=\gamma T +b T^{3}$$<br>
+$$\begin{align}\gamma &amp;=\frac {\pi^2}{3} k_{B}^{2}N(E_{F}) \\&amp;=1.36 \times 10^{-4} \times V_{mol}^{2/3} n_{\gamma}^{1/3}\frac{m^{ * }}{m_{0}}\end{align}$$<br>
+对于低温热容(德拜温度以下)，某些材料符合以上公式，其中$\gamma T$代表电子热容贡献，$\gamma$代表电子热容系数，$bT^{3}$代表晶格贡献，在德拜模型中，$b=12\pi^{4}R_{0}/5\theta_{D}^{3}$，其中$\theta_{D}$代表德拜温度，$R_{0}$代表气体普适常 数，$\gamma$可以通过费米能级出的态密度$N(E_{F})$得到，及有效质量$m^*$,$V_{mol}$代表摩尔体积，$n_{\gamma}$代表单胞内电子数，$m^{* }$代表态密度有效质量。<br>
+通过对$C_p/T$与$T^2$关系作图，可以产生一个直线，当T=0时，直线与曲线键的截距就是$\gamma$值，这样也可以反推得到有效质量$m^{* }$.</p></li>
+</ul>
+<ul>
+<li><p>PbTe和SnTe热容拟合值<sup class="footnote-ref"><a href="#fn26" id="fnref26">[26]</a></sup><br>
+$$C_{p}(k_{B}/atom)=3.07+0.00047(T/K-300)$$<br>
+其中,$C_{P}(k_{B}/atom)$代表单胞中每个原子的原子热容，该公式仅适用于PbTe和SnTe.</p></li>
+</ul>
+<h3 id="&#x5FB7;&#x62DC;&#x6E29;&#x5EA6;">德拜温度</h3>
+<ul>
+<li><p>对于各向同性的材料来说<sup class="footnote-ref"><a href="#fn27" id="fnref27">[27]</a></sup><br>
+$$\theta_D=\left( \frac {h}{k_{B}} \right) \left[ \frac{9N}{4\pi V(v_{L}^{-3}+2v_{S}^{-3})}\right]^{1/3}$$<br>
+其中$\theta_D$代表德拜温度，$h$代表普朗克常量，$k_B$代表玻尔兹曼常数，$N$代表单胞中的原子数目，$V$代表晶胞体积，$v_{L}$代表纵向声速，$v_{S}$代表剪切声速</p></li>
+</ul>
+<h3 id="&#x70ED;&#x5BFC;&#x7387;&#x7684;&#x975E;&#x6676;&#x6781;&#x9650;">热导率的非晶极限</h3>
+<ul>
+<li><p>Cahill公式<br>
+Cahill公式适用的是非晶材料热导率的高温极限(最小热导率不考虑电子热导，仅从晶格热导的角度出发)。
+<ul>
+<li><p>简化公式<sup class="footnote-ref"><a href="#fn28" id="fnref28">[28]</a></sup><br>
+$$\kappa_{min}=\frac{1}{2}\left(\frac{\pi}{6}\right)^{1/3}k_{B}V^{-2/3}(2v_{t}+v_{l})$$<br>
+其中，$\kappa_{min}$代表热导率的非晶极限, $k_{B}$代表玻尔兹曼常数，$V$代表平均原子体积，$v_{l}$代表纵波声速，$v_{t}$代表横波声速。</p></li>
+<li><p>非简化公式<sup class="footnote-ref"><a href="#fn28" id="fnref28:1">[28]</a></sup><br>
+$$\kappa_{min}=\left(\frac{\pi}{6}\right)^{1/3}k_{B}V^{-2/3}\; \sum_{i}v_{i}\left(\frac{T}{\Theta_{i}}\right)^{2}\int_{0}^{\Theta_{i}/T}\frac{x^{3}e^{x}}{(e^{x}-1)^{2}}dx$$<br>
+其中，$\kappa_{min}$代表热导率的非晶极限, $k_{B}$代表玻尔兹曼常数，$V$代表平均原子体积，$v_{i}$代表纵波声速($v_{l}$)或者横波声速($v_{t}$),$\Theta$代表德拜温度，其中$\Theta_{i}=v_{i}(\hbar/k_{B})(6\pi^{2}/V)^{1/3}$,$v_{i}$代表相应的声速。</p></li>
+</ul></p></li>
+</ul>
+<h3 id="callaway&#x6A21;&#x578B;04-05">callaway模型<sup class="footnote-ref"><a href="#fn29" id="fnref29">[29]</a></sup></h3>
+<ul>
+<li><p>callaway模型<sup class="footnote-ref"><a href="#fn29" id="fnref29:1">[29]</a></sup><br>
+$$\kappa_{l}(\omega)=\frac{k_B}{2\pi^{2}v}(\frac{k_{B}T}{\hbar})^{3}\frac{z^{4}e^{z}}{\tau^{-1}(e^{z}-1)^2}$$<br>
+其中$z=\hbar \omega/k_{B}T$代表简约声子频率，$k_{B}$代表玻尔兹曼常数，$\hbar$代表简约费米能级，$\theta_{D}$代表德拜温度，$v$代表平均声速，$\tau$代表总驰豫时间。<br>
+其中总得弛豫时间$\tau$有如下关系:<br>
+$$\tau^{-1}=A\omega^{4}+B\omega^{2}T \exp (-\theta_{D}/3T)+C \omega^{2}+v/d$$<br>
+其中，$d$代表晶粒尺寸，$v/d$代表晶界散射，$A,B,C$分别代表点缺陷散射，Umklapp过程散射，电子-声子散射的散射因子。</p></li>
+</ul>
+<ul>
+<li><p>Debye 近似<br>
+$$\kappa_{l}(\omega)=\frac{k_B}{2\pi^{2}v}(\frac{k_{B}T}{\hbar})^{3}\int_{0}^{\theta_{D}/T} \frac{z^{4}e^{z}}{\tau_{c}^{-1}(e^{z}-1)^2} dx$$</p></li>
+</ul>
+<h3 id="debye-callaway&#x6A21;&#x578B;04-06">Debye-callaway模型<sup class="footnote-ref"><a href="#fn30" id="fnref30">[30]</a></sup></h3>
+<p>$$\Gamma =x(1-x)\left[\left(\frac{\Delta M}{M}\right)^{2}+\varepsilon \left(\frac{\Delta \delta}{\delta}\right)^2 \right]$$<br>
+$$U^{2}=\left(\frac{\pi^{2}\theta_{D}\Omega}{h \nu^{2}}\right)\kappa_{L}^{pure}\Gamma$$<br>
+$$\kappa_{L}^{cal}=U^{-1} \tan^{-1}(U) \kappa_{L}^{pure}$$<br>
+其中,$\Gamma$代表原子无序性参数，$M$代表平均原子质量，$\Delta M$代表原子质量偏差，$\delta$代表晶格常数，$\varepsilon$代表晶格反谐振参数,$\theta_{D}$代表由声速计算得到的德拜温度,$\Omega$代表平均原子体积,$h$代表普朗克常量,$\nu$代表平均声速,$\kappa_{L}^{pure}$代表不存在点缺陷的晶格热导,$\kappa_{L}^{cal}$代表计算的晶格热导.</p>
+<ul>
+<li><p>klemens’s model</p></li>
+</ul>
+<h3 id="non-equilibrium-greens-function-formalism">non-equilibrium Green’s function formalism</h3>
+<h3 id="&#x6709;&#x6548;&#x4ECB;&#x8D28;&#x7406;&#x8BBA;ema&#x590D;&#x5408;&#x4E13;&#x7528;04-07">有效介质理论(EMA)(复合专用)<sup class="footnote-ref"><a href="#fn31" id="fnref31">[31]</a></sup></h3>
+<p>$$\kappa^{* }=\kappa_{m} \frac{\kappa_{P}(1+2\alpha)+2\kappa_{m}+2f[\kappa_{P}(1-\alpha)-\kappa_{m}]}{\kappa_{P}(1+2\alpha)+2\kappa_{m}-f[\kappa_{P}(1-\alpha)-\kappa_{m}]}$$<br>
+$$\alpha=\frac{a_{k}}{a}$$<br>
+其中，$\kappa^{* }$代表复合后的材料总热导，$\kappa_{m}$代表基体主相的热导率，$\kappa_{P}$代表球形颗粒的热导率，$f$代表球形颗粒占的体积分数，$a$代表球形颗粒的半径，$a_{k}$代表复合物的Kapitza半径<br>
+根据EMA理论，当分散相的热导率比基体热导率高时，复合材料的热导率主要取决于Kapitza半径与颗粒半径分布的关系，如果颗粒半径小于Kapitza半径，那么复合材料会由于界面热阻而降低热导；如果颗粒半径大于Kapitza半径，高热导的分散颗粒将会起作用，复合物的热导率将会增加，因此EMA理论中的Kapitza半径至关重要。其具体影响因素如下:<br>
+$$a_{k}=R_{Bd}K_{m}; R_{Bd}=\frac{4}{\rho C \nu \eta}$$<br>
+其中，$R_{Bd}$被称为边界热阻，$\rho$代表基体的密度，$C$代表基体的比热，$\nu$代表基体的德拜(debye)速度,$\eta$代表声子穿过界面进入颗粒的平均概率，$\eta$可以用$\eta=pq$表示。其中$p,q$分别表示如下:<br>
+$$q=\frac {1}{2} \sin^{2}\theta_{c} =\frac{1}{2}(\nu /\nu^{&#x27;})^{2}$$<br>
+$$p=\frac{4ZZ^{&#x27;}}{(Z+Z^{&#x27;})^{2}}; Z=p\nu ; Z^{&#x27;}=p^{&#x27;}\nu^{&#x27;}$$</p>
+<ul>
+<li><p>弛豫时间
+<ul>
+<li><p>联合弛豫时间<sup class="footnote-ref"><a href="#fn32" id="fnref32">[32]</a></sup><br>
+$$\tau_{c}^{-1}=\tau_{U}^{-1}+\tau_{N}^{-1}+\tau_{B}^{-1}+\tau_D^{-1}+\tau_{P}^{-1}+\tau_{S}^{-1}$$<br>
+其中，$\tau_{U}^{-1}$代表Umklapp过程的弛豫时间，$\tau_{N}^{-1}$代表标准声子-声子散射的弛豫时间，$\tau_{B}^{-1}$代表晶界散射的驰豫时间，$\tau_{D}^{-1}$代表位错的弛豫时间，$\tau_{P}^{-1}$代表沉积物的驰豫时间，$\tau_{S}^{-1}$代表应力的弛豫时间。</p></li>
+<li><p>Peter Carruthers简化的弹性应力场的驰豫时间<sup class="footnote-ref"><a href="#fn32" id="fnref32:1">[32]</a></sup><br>
+$$\tau_{S}^{-1} = \frac {1}{4} \sigma (\frac {gA^{&#x27;}} { \rho } )^{2} (\frac {q^2}{v^3})=\frac{144\sigma \gamma^{2}\varepsilon^{2}r_{0}^{4}}{v}\omega^{2}$$<br>
+其中$g=24 \gamma \rho v^{2}$，$A^{&#x27;}=\varepsilon r_{0}^{2}$，$q=(\omega)/(v)$，$\rho$代表晶体密度，$\sigma$代表散射密度，$r_{0}$代表球形半径，$\varepsilon$代表球形杂质与基体间的错配度，其表达式如下<br>
+$$\varepsilon=\varepsilon_{0}+[\alpha_{P}-\alpha_{M}(1-\varepsilon_{0})](T-300)$$<br>
+$\varepsilon_{0}$代表室温300K时的错配度，可以通过TEM照片获得。$\alpha_{P}$代表纳米沉积物的热膨胀系数，$\alpha_{M}$代表基体的热膨胀系数</p></li>
+</ul></p></li>
+</ul>
+<h2 id="dft&#x8BA1;&#x7B97;&#x76F8;&#x5173;">DFT计算相关</h2>
+<h3 id="&#x8BA1;&#x7B97;&#x8868;&#x9762;&#x80FD;&#x516C;&#x5F0F;">计算表面能公式</h3>
+<p>晶体的表面能DFT计算核心公式<sup class="footnote-ref"><a href="#fn33" id="fnref33">[33]</a></sup><br>
+$$E_{sur}=(E_{tol} - nE_{cell})/S$$<br>
+$E_{sur}$代表表面能，$E_{tol}$代表沿着特定方向构建的超胞的总能，$E_{cell}$代表单胞的总能，$S$代表超胞中还要的特定面的面积，$n$代表超胞中所含单胞的个数。</p>
+<h3 id="&#x8BA1;&#x7B97;&#x7F3A;&#x9677;&#x5F62;&#x6210;&#x80FD;&#x516C;&#x5F0F;">计算缺陷形成能公式</h3>
+<ul>
+<li><p>空位形成能的计算公式如下: <sup class="footnote-ref"><a href="#fn34" id="fnref34">[34]</a></sup><br>
+$$E_{f}=E(defect,q)-E(pure)+\mu_{S}+q(E_{VBM}+\varepsilon_F)$$<br>
+其中,$E(defect,q)$代表超胞中存在一个S空位电荷价态为q的总能，$E(pure)$代表完整超胞中的总能，$\mu_{S}$代表硫的化学化学势，$E_{VBM}$代表价带顶的能量(可以是经过矫正的能量)，$\varepsilon_{F}$代表从费米能级处计算得到的费米能级的测试值。</p></li>
+</ul>
+<ul>
+<li><p>缺陷形成能<sup class="footnote-ref"><a href="#fn35" id="fnref35">[35]</a></sup><br>
+$$E_d(D^{(q)},\mu)=E_f(D^{(q)})-\mathop{\Sigma}\limits_{\alpha} n_{\alpha}\Delta \mu_{\alpha}+q_{e}\mu_{e}$$<br>
+其中，$$E_{f}(D^{(q)})=E(D^{(q)})-E_{bulk}-\mathop{\Sigma}\limits_{\alpha}n_{\alpha}\Delta \mu_{\alpha}$$<br>
+代表对应于标准状态下的缺陷的形成能，$E(D^{(q)})$代表包含缺陷$D$，和额外电荷量$q$的总能，$E_{bulk}$代表完美超晶胞块体材料的总能，$n_{\alpha}$代表缺陷态下转移的原子数量，$E_{\alpha}$代表这些原子标准态下的能量.</p></li>
+</ul>
+<h2 id="&#x6709;&#x6548;&#x8D28;&#x91CF;&#x53CA;&#x7981;&#x5E26;&#x5BBD;&#x5EA6;">有效质量及禁带宽度</h2>
+<h3 id="&#x6709;&#x6548;&#x8D28;&#x91CF;&#x7684;&#x5B9E;&#x9A8C;&#x63A8;&#x5BFC;">有效质量的实验推导</h3>
+<ol>
+<li><p>通过红外光谱得到有效质量<sup class="footnote-ref"><a href="#fn36" id="fnref36">[36]</a></sup><br>
+Drude 修正模型<br>
+$$R(\omega)={\lvert \frac {\sqrt{\varepsilon(\omega)}-1}{\sqrt{\varepsilon(\omega)}+1} \rvert }^2$$<br>
+其中$R(\omega)$代表Drude频率，$\varepsilon(\omega)$代表复数介电常数，根据Drude模型存在一下关系:<br>
+$$\varepsilon(\omega)=\varepsilon_{\infty}-\frac{\varepsilon_{\infty}\cdot \omega_{PL}^{2}}{\omega^{2}-i \cdot \gamma_{PL} \cdot \omega}$$<br>
+其中$\varepsilon_{\infty}$代表介电常数的高频贡献，$\gamma_{PL}$代表载流子阻抗因子，$\omega_{PL}$代表等离子体频率，i代表虚部，其中等离子体频率$\omega_{PL}$又可表示为:<br>
+$$\omega_{PL}^{2}=\frac{n \cdot e^2}{m^* \varepsilon_{0}\varepsilon_{\infty}}$$<br>
+根据以上公式，已知载流子浓度即可推出有效质量，已知有效质量即可推出载流子浓度。</p></li>
+</ol>
+<h3 id="bi2te3&#x6216;&#x8005;sb2te3&#x80FD;&#x5E26;&#x5728;yz&#x5E73;&#x9762;&#x7684;&#x60C5;&#x51B5;06-02">Bi2Te3或者Sb2Te3能带在yz平面的情况<sup class="footnote-ref"><a href="#fn37" id="fnref37">[37]</a></sup></h3>
+<p>$$\frac{2m_eE}{\hbar^{2}}=\alpha_{xx}k_{x}^{2}+\alpha_{yy}k_{y}^{2}+\alpha_{zz}k_{z}^{2}+2\alpha_{yz}k_{y}k_{z}$$<br>
+其中$m_e$代表自由电子有效质量，$E$代表价带顶或者导带底对应的能量，$\alpha_{ij}$代表有效质量张量。有效质量张量$\alpha_{ij}$可以通过沿着各个正交方向(x,y,z,yz)对E和k的抛物线拟合值。</p>
+<h3 id="&#x6709;&#x6548;&#x8D28;&#x91CF;&#x8BA1;&#x7B97;">有效质量计算</h3>
+<p>$$m^{* }=\hbar^{2} \left(\frac{d^{2}E}{dk^{2}}\right)^{-1}$$</p>
+<ul>
+<li><p>态密度与有效质量的关系<sup class="footnote-ref"><a href="#fn38" id="fnref38">[38]</a></sup>
+<ul>
+<li><p>公式一<sup class="footnote-ref"><a href="#fn38" id="fnref38:1">[38]</a></sup></p></li>
+</ul></p></li>
+</ul>
+<p>$$g(E)=\frac{(m_d^{* })^{3/2} \sqrt{2E}}{\hbar^{3}\pi^{2}}$$</p>
+<ul>
+<li><p>公式二<sup class="footnote-ref"><a href="#fn39" id="fnref39">[39]</a></sup><br>
+$$g(E)dE=\frac{4\pi(2m^{* })^{3/2}dE}{h^{3}}$$</p></li>
+</ul>
+<h2 id="&#x7981;&#x5E26;&#x5BBD;&#x5EA6;">禁带宽度</h2>
+<h3 id="&#x7D2B;&#x5916;&#x53EF;&#x89C1;&#x5149;&#x6F2B;&#x53CD;&#x5C04;&#x5149;&#x8C31;uvvis-diffuse-reflectance-spectra06-05">紫外可见光漫反射光谱(UV–Vis diffuse reflectance spectra)<sup class="footnote-ref"><a href="#fn40" id="fnref40">[40]</a></sup></h3>
+<p>带边光吸收遵循以下公式:<br>
+$$\alpha h \nu =A(h \nu -E_{g})^{n/2}$$<br>
+其中，$\alpha$代表吸收系数，$h$代表普朗克常量，$\nu$代表光频率，$A$:代表比例常量，$E_{g}$代表禁带宽度，当n=1时，表示半导体为直接半导体，当n=4时为间接半导体。</p>
+<h3 id="&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x4E0E;&#x6E29;&#x5EA6;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;06-06">禁带宽度与温度之间的关系<sup class="footnote-ref"><a href="#fn41" id="fnref41">[41]</a></sup></h3>
+<p>$$E_g=E_g^{0}-\beta T$$<br>
+其中$E_g$代表禁带宽度，$E_g^{0}$代表0K时的禁带宽度，此禁带宽度一般从DFT计算中得到。$\beta$是温度系数;当前文献取值为$2\times 10^{-4}\; eV/K$,不一定适用所有体系。</p>
+<h3 id="&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x9884;&#x4F30;">禁带宽度预估</h3>
+<h4 id="&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x4E0E;&#x6700;&#x5927;seebeck&#x7CFB;&#x6570;&#x7684;&#x5173;&#x7CFB;06-07">禁带宽度与最大seebeck系数的关系[^06-07]</h4>
+<p>$$E_{g}=2e \alpha_{max}T_{max}$$<br>
+其中，$Eg$代表禁带宽度,$\alpha_{max}$代表seebeck系数的最大值，$T_{max}$代表最大seebeck系数对应的温度。在高温段评估Eg具有重要意义，因为禁带宽度可以有效量化少子的输运行为，少子输运行为通常可以减少高温段的ZT值(双极扩散本征激发)。</p>
+<h4 id="&#x7981;&#x5E26;&#x5BBD;&#x5EA6;&#x4E0E;&#x7535;&#x963B;&#x7387;&#x7684;&#x5173;&#x7CFB;">禁带宽度与电阻率的关系</h4>
+<p>$$\ln \rho =-\frac{E_{g}}{2k_{B}} \; \frac{1}{T}+C$$<br>
+其中,$\rho$表示电阻率,$E_{g}$代表禁带宽度。</p>
+<h2 id="&#x529B;&#x5B66;&#x6027;&#x8D28;">力学性质</h2>
+<h3 id="&#x6768;&#x6C0F;&#x6A21;&#x91CF;">杨氏模量</h3>
+<ul>
+<li><p>对于各向同性的材料来说：<sup class="footnote-ref"><a href="#fn42" id="fnref42">[42]</a></sup><br>
+$$E=\frac{G(3v_{L}^{2}-4v_{S}^{2})}{v_{L}^{2}-v_{s}^{2}}$$<br>
+其中$E$代表杨氏模量,$G$代表剪切模量，$v_{L}$代表纵向声速，$v_{S}$代表剪切声速</p></li>
+</ul>
+<ul>
+<li><p>基于弹性常数的计算<sup class="footnote-ref"><a href="#fn43" id="fnref43">[43]</a></sup><br>
+$$E=\frac{C_{44}(3C_{11}-4C_{44})}{C_{11}-C{44}}$$<br>
+其中，$E$代表杨氏模量，$C_{11}，C_{44}$代表不同方向的弹性常数</p></li>
+</ul>
+<h3 id="&#x526A;&#x5207;&#x6A21;&#x91CF;">剪切模量</h3>
+<ul>
+<li><p>对于各向同性的材料来说：<sup class="footnote-ref"><a href="#fn42" id="fnref42:1">[42]</a></sup><br>
+$$G=\rho v_{S}^{2}$$<br>
+其中，$G$代表剪切模量，$\rho$代表样品的密度，$v_{S}$代表剪切声速</p></li>
+</ul>
+<h3 id="&#x6CCA;&#x677E;&#x6BD4;">泊松比</h3>
+<ul>
+<li><p>对于各向同性的材料来说
+<ul>
+<li><p>基于弹性常数的计算<sup class="footnote-ref"><a href="#fn43" id="fnref43:1">[43]</a></sup><br>
+$$\nu =\frac{C_{11}-2C_{44}}{2(C_{11}-C_{44})}$$<br>
+其中，$\nu$代表泊松比，$C_{11}，C_{44}$代表不同方向的弹性常数</p></li>
+</ul></p></li>
+</ul>
+<h2 id="zt&#x4E0E;&#x5668;&#x4EF6;&#x6548;&#x7387;">ZT与器件效率</h2>
+<h3 id="&#x7406;&#x8BBA;&#x8F6C;&#x5316;&#x6548;&#x7387;08-0108-02">理论转化效率<sup class="footnote-ref"><a href="#fn44" id="fnref44">[44]</a></sup><sup class="footnote-ref"><a href="#fn45" id="fnref45">[45]</a></sup></h3>
+<p><strong>适用范围：本公式为最简单的平均ZT与理论转化效率的关系</strong><br>
+$$\eta=\frac{\Delta T}{T_h} \frac{\sqrt{1+\overline{ZT}}-1}{\sqrt{1+ \overline{ZT}}+\frac{T_c}{T_h}}$$<br>
+$\Delta T$代表热端与冷端的温度差，$\overline{ZT}$代表平均ZT</p>
+<h3 id="&#x5E73;&#x5747;zt08-03">平均ZT<sup class="footnote-ref"><a href="#fn46" id="fnref46">[46]</a></sup></h3>
+<p>$$\overline{ZT}=\frac{1}{T_{h}-T_{c}} \int_{T_{c}}^{T_{h}}ZT dT$$</p>
+<h3 id="pn&#x578B;&#x5171;&#x540C;&#x4F5C;&#x7528;&#x7684;zt&#x503C;">p/n型共同作用的ZT值</h3>
+<p>$$ZT=\frac{(\alpha_p-\alpha_n)^2T}{[(\rho_{n}\kappa_{n})^{1/2}+(\rho_{p}\kappa_{p})^{1/2}]^2}$$</p>
+<h3 id="&#x70ED;&#x7535;&#x5668;&#x4EF6;">热电器件</h3>
+<h4 id="&#x5668;&#x4EF6;&#x7406;&#x8BBA;">器件理论</h4>
+<ul>
+<li><p>线性非平衡热动力学(linear nonequilibrium thermodynamic)</p></li>
+</ul>
+<h3 id="&#x70ED;&#x7535;&#x53D1;&#x7535;">热电发电</h3>
+<ul>
+<li><p>introduction<sup class="footnote-ref"><a href="#fn47" id="fnref47">[47]</a></sup><br>
+$$I=\frac {(\alpha_{p}-\alpha_{n})(T_{1}-T_{2})}{R_{p}+R_{n}+R_{L}}$$<br>
+其中，$I$代表电路中的电流，$\alpha$代表seebeck系数,$p，n$分别代表p型和n型的热电臂。$R$代表电阻。<br>
+$$p=I^{2}R_{L}=\left\{\frac {(\alpha_{p}-\alpha_{n})(T_{1}-T_{2})}{R_{p}+R_{n}+R_{L}} \right\}^{2}R_{L}$$<br>
+其中，$p$代表输出功率，$R_{L}$代表负载电阻。<br>
+$$Q_{h}=(\alpha_{p}-\alpha_n)IT_{1}+(K_{p}+K_n)(T_{1}-T_{2})$$<br>
+其中，$Q_{h}$代表高温端的热流，$T_{1}$代表高温端的温度，$T_{2}$代表低温端的温度,$K=\kappa A/L$ $K$代表热导，不是热导率。<br>
+$$\eta=\frac{p}{Q_{h}}$$<br>
+根据初中数学的只是我们知道，当外阻等于内阻的时候，可用输出功率将达到最大值。然而，即使热流通过器件时没有热损失，其效率也不可能超过50%，增加外阻会减小输出功率但是会增加效率。<br>
+$$M=\frac{R_{L}}{R_{p}+R_{n}}=(1+ZT_{m})^{1/2}$$<br>
+$$\eta=\frac{(T_{1}-T_{2})(M-1)}{T_{1}(M+T_{2}/T_{1})}$$<br>
+根据上式，我们可以看出，当M极大时，效率趋向于卡诺循环效率。$M$极大也就是代表$ZT_{m}$极大,$ZT_{m}$代表平均$ZT$。
+<ul>
+<li><p>多级制冷器件(multi-stage Devices)<br>
+$$Q_{n}=Q_{N}\left(1+\frac{1}{\Phi_{N}}\right) \left(1+\frac{1}{\Phi_{N-1}}\right) \cdots \left(1+\frac{1}{\Phi_{N-n}}\right)$$<br>
+其中$Q_{n}代表第n级器件的热流$,$Q_{N}$代表第N级(最热端的热流(初始的热流))，本公式其实相当于一个累加，靠近热源的一端为第N段，靠近冷端的为第n段或者第1段，由于每一级热电模块都相当于一个抽水泵，下面抽取的热量是本身的热量与外界施加电量的加和。所以才有这个公式。<br>
+$$Q_{1}=Q_{N}\left(1+\frac{1}{\Phi_{N}}\right) \left(1+\frac{1}{\Phi_{N-1}}\right) \cdots \left(1+\frac{1}{\Phi_{1}}\right)$$<br>
+所以，对于多段器件，其最终的制冷效率为:<br>
+$$\phi=\left[\left(1+\frac{1}{\phi_{N}}\right)\left(1+\frac{1}{\phi_{N-1}}\right) \cdots \left(1+\frac{1}{\phi_{1}}\right) -1 \right]^{-1}$$<br>
+如果每段的制冷效率相同，则制冷效率则可简化为：<br>
+$$\phi=\left[\left(1+\frac{1}{\phi_{s}}\right)^{-1}-1 \right]^{-1}$$</p></li>
+</ul></p></li>
+</ul>
+<ul>
+<li><p>热电发电有限元计算公式<sup class="footnote-ref"><a href="#fn48" id="fnref48">[48]</a></sup><sup class="footnote-ref"><a href="#fn49" id="fnref49">[49]</a></sup><br>
+$$Q_{H}=\alpha IT_{H}-\frac{1}{2}I^{2}R+K \Delta T$$<br>
+$$Q_{C}=\alpha IT_{C}+\frac{1}{2}I^{2}R+K \Delta T$$<br>
+$$P=I^{2}R_{L}$$<br>
+$$I=\frac{V_{oc}}{R+R_{L}}$$<br>
+$$\Delta T=T_{H}-T_{C}$$<br>
+$$V_{oc}=\alpha T$$<br>
+$$R=\rho L/A$$<br>
+$$K=\kappa A/L=\kappa_{n}\gamma_{n}+\kappa_{p}\gamma_{p}=\kappa_{n}\left(\frac{A}{L}\right)_ {n}+\kappa_{p}\left(\frac{A}{L}\right)_ {n}$$<br>
+$$Q_{H}=P+Q_{C}$$<br>
+$$Z=\frac{\alpha^{2}}{\rho \kappa}$$<br>
+其中，$Q_{H}$代表热电发电器的热端热流，$Q_{c}$代表热电发电器冷端热流，$\alpha$代表seebeck系数，$\rho$代表电阻率，$\kappa$代表热导率，$I$代表电流，$T_{H}$,$T_{C}$分别代表热端温度，冷端温度。$P$代表输出功率。$R_{L}$代表负载电阻，$V_{OC}$代表开路电压，$A$代表热电臂的横截面积，$L$代表热电臂的高度。</p></li>
+</ul>
+<ul>
+<li><p>ZT值与转化效率的关系<sup class="footnote-ref"><a href="#fn47" id="fnref47:1">[47]</a></sup><sup class="footnote-ref"><a href="#fn50" id="fnref50">[50]</a></sup><br>
+$$Z=\frac{(\alpha_{p}-\alpha_{n})^{2}}{((\lambda_{p}\cdot \rho_{p})^{1/2}+(\lambda_{n}\cdot \rho_{n})^{1/2})^{2}}$$<br>
+$$\eta_{TEmax}=\frac{W_{elec}}{Q_{H}}=\frac{\Delta T}{T_{H}}\cdot \frac{\sqrt{1+ZT}-1}{\sqrt{1+ZT}+\frac{T_{C}}{T_{H}}}$$<br>
+$\lambda$代表热导率，$\rho$代表电阻率,$\alpha$代表Seebeck系数。$T=(T_{H}-T_{C})/2$</p></li>
+</ul>
+<ul>
+<li><p>基本热动力学关系<sup class="footnote-ref"><a href="#fn51" id="fnref51">[51]</a></sup><br>
+$$\nabla (\kappa \nabla T)+\frac{\mathcal{J}^{2}}{\sigma}-T \mathcal{J}\cdot \left[\left(\frac{\partial \alpha}{\partial T}\right) \nabla T+(\nabla \alpha)_ {T}\right]= 0$$<br>
+$$\nabla \cdot \mathcal{J}=0$$<br>
+$$\mathcal{J}=-\sigma(\nabla V+\alpha \nabla T)$$<br>
+$$q=\alpha T \mathcal{J}-\kappa \nabla T$$<br>
+其中,$\mathcal{J}$代表电流密度，$q$代表热流，$\kappa$代表热导率，$\sigma$代表电导率，$\alpha$代表seebeck系数，$V$代表静电势，$T$代表绝对温度。<br>
+在一个热电模块中，同时存在seebeck效应，帕尔贴效应，汤姆逊效应，对于任何精确模拟来说，这几个效应都是必须要考虑的。<br>
+其最终的转化效率可以表示为:<br>
+$$\eta=\frac{P}{Q_{h}}=\frac{P}{P+Q_{c}}=\frac{IV}{IV+Q_{c}}* 100\%$$<br>
+其中，$P$代表对于给定负载的输出功率，电流($I$)、吸收的热流($Q_{h}$),释放的热流($Q_{c}$)分别对应电流密度或者热流在某一横截面积上的面积积分。</p></li>
+</ul>
+<ul>
+<li><p>热电模块热流测试原理<sup class="footnote-ref"><a href="#fn51" id="fnref51:1">[51]</a></sup><br>
+热流测试方法:<br>
+$$Q_{c}=\frac{\kappa_{Cu}A_{Cu}\Delta T}{L}$$<br>
+其中，$Q_{c}$代表冷端热流，$\kappa_{Cu}$代表铜柱的热导率,$A_{Cu}$代表铜柱的横截面积,$L$代表铜柱的高度,$\Delta T$代表热端与冷端的温度差。</p></li>
+</ul>
+<h4 id="&#x6709;&#x9650;&#x5143;&#x70ED;&#x7535;&#x5668;&#x4EF6;&#x539F;&#x7406;&#x7A33;&#x6001;&#x6761;&#x4EF6;&#x4E0B;08-09">有限元热电器件原理(稳态条件下)<sup class="footnote-ref"><a href="#fn52" id="fnref52">[52]</a></sup></h4>
+<p>$$J=\sigma(-\nabla U-\alpha \cdot \nabla T)$$<br>
+$$q=-\kappa \nabla T$$<br>
+$$\nabla J =0$$<br>
+$$\nabla(\kappa \nabla T)+J^{2}/\sigma -T J\cdot \nabla S$$</p>
+<h4 id="&#x70ED;&#x7535;&#x5236;&#x51B7;08-04">热电制冷<sup class="footnote-ref"><a href="#fn47" id="fnref47:2">[47]</a></sup></h4>
+<p>$$Q_{c}=(\alpha_{p}-\alpha_{n})IT_{1}-(T_{2}-T_{1})(K_{p}+K_{n})-I^{2}(R_{p}+R_{n})/2$$<br>
+其中，$Q_{c}$代表制冷功率，$(\alpha_{p}-\alpha_{n})IT_{1}$代表波尔贴热，$I^{2}(R_{p}+R_{n})$代表焦耳热，$(T_{2}-T_{1})(\kappa_{p}+\kappa_{n})$代表热流贡献。$\alpha_{p}$,$\alpha_{n}$代表p型，n型热电臂的seebeck系数，$K_{p}$,$K_{n}$代表p型，n型热电臂的热导(注意，此处就是热导不是热导率$\kappa$)，$T_{1}$代表吸热端，$T_{2}$代表放热端。热电制冷利用了帕尔贴效应，所以，其在吸热端的制冷功率$Q_{c}$就是帕尔贴功率-热传导的影响-焦耳热的一半<br>
+$$P=(\alpha_{p}-\alpha_{n})I(T_{2}-T_{1})+I^{2}(R_{p}+R_{n})$$<br>
+$P$代表电源的总输入功率。$P$的推导可以根据$P=UI=(欧姆电压+seebeck效应电压) I$<br>
+$\phi=\frac{Q_{c}}{P}=\frac{(\alpha_{p}-\alpha_{n})IT_{1}-(T_{2}-T_{1})(K_{p}+K_{n})-I^{2}(R_{p}+R_{n})/2}{(\alpha_{p}-\alpha_{n})I(T_{2}-T_{1})+I^{2}(R_{p}+R_{n})}$<br>
+$\phi$代表热电制冷器件的效率。若求最大效率对应的最大电流，及最大效率只需要对$\phi$求导即$\frac{\partial \phi}{\partial I}=0$时,即可求出最大效率对应的最大电流和最大效率。</p>
+<ul>
+<li><p>最大效率对应的电流满足如下关系：<br>
+$$\begin{align}I_{\phi} &amp;= \frac{(\alpha_{p}-\alpha_{n})(T_{2}-T_{1})}{(R_{p}+R_{n})\{(1+ZT_{m})^{1/2}-1\}} \\\end{align}$$<br>
+$$\begin{align}\phi_{max} &amp;= \frac{T_{1}\left\{(1+ZT_{m})^{1/2}-(T_{2}/T_{1}) \right\}}{(T_{2}-T_{1})\left \{(1+ZT_{m})^{1/2}+1 \right\}}\end{align}$$<br>
+事实上，相获得最大的效率，只需要$\phi$对$I$求导即可。</p></li>
+<li><p>最大制冷功率对应的电流满足如下关系:<br>
+$$I_{q}=(\alpha_{p}-\alpha_{n})T_{1}/(R_{p}+R_{n})$$<br>
+$$\phi_{q}=\frac{ZT_{1}^{2}/2-(T_{2}-T_{1})}{ZT_{2}T_{1}}$$<br>
+其中$Z=\frac {(\alpha_{p}-\alpha_{n})^{2}}{\{(\kappa_{p}+\kappa_{n})(R_{p}+R_{n})\}}$<br>
+对于给定的一对热电材料,存在最佳的Z值。如上式，在器件设计时，$(\kappa_{p}+\kappa_{n})(R_{p}+R_{n})$的值尽可能的小</p></li>
+<li><p>p型,n型最佳的横截面积比例<sup class="footnote-ref"><a href="#fn53" id="fnref53">[53]</a></sup><br>
+$$\frac{L_{n}A_{p}}{L_{p}A_{n}}=\left(\frac{\rho_{p}\lambda_{n}}{\rho_{n}\lambda_{p}}\right)^{1/2}$$<br>
+由于通常$L_{n}=L_{p}$，所以存在如下关系:<br>
+$$\frac{A_{p}}{A_{n}}=\left(\frac{\rho_{p}\lambda_{n}}{\rho_{n}\lambda_{p}}\right)^{1/2}$$<br>
+其中，$A$代表热电臂的横截面积,$L$代表热电臂的长度,$\rho$代表热电臂的电阻率,$\lambda$代表热电臂的热导率。</p></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>代兵师兄论文，葛师兄论文 <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>H.Julian Goldsmid, Introduction to Thermoelectricicty. 2010. <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>J. He, J. R. Sootsman, S. N. Girard, J.-C. Zheng, J. Wen, Y. Zhu, M. G. Kanatzidis, and V. P. Dravid, “On the Origin of Increased Phonon Scattering in Nanostructured PbTe Based Thermoelectric Materials,” no. 14, pp. 8669–8675, 2010. <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>J. R. Sootsman, D. Y. Chung, and M. G. Kanatzidis, “New and old concepts in thermoelectric materials,” Angew. Chemie - Int. Ed., vol. 48, no. 46, pp. 8616–8639, 2009. <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Z.-H. Ge, B.-P. Zhang, Z.-X. Yu, and J.-F. Li, “Effect of spark plasma sintering temperature on thermoelectric properties of Bi2S3 polycrystal,” J. Alloys Compd., vol. 397, no. 1–2, pp. 296–299, 2011. <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>D. M. Rowe, CRC Handbook of thermoelectrics. 1995. <a href="#fnref6" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Y. Q. Yu, B. P. Zhang, Z. H. Ge, P. P. Shang, and Y. X. Chen, “Thermoelectric properties of Ag-doped bismuth sulfide polycrystals prepared by mechanical alloying and spark plasma sintering,” Mater. Chem. Phys., vol. 131, no. 1–2, pp. 216–222, 2011. <a href="#fnref7" class="footnote-backref">↩</a> <a href="#fnref7:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>S. Zhang, G. Jiang, T. Zhu, X. Zhao, and S. Yang, “Doping effect on thermoelectric properties of nonstoichiometric AgSbTe2 compounds,” Int. J. Miner. Metall. Mater., vol. 18, no. 3, pp. 352–356, 2011. <a href="#fnref8" class="footnote-backref">↩</a> <a href="#fnref8:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>W. Liu, X. Tan, K. Yin, H. Liu, X. Tang, J. Shi, Q. Zhang, and C. Uher, “Convergence of conduction bands as a means of enhancing thermoelectric performance of n-type Mg 2Si 1-xSn x solid solutions,” Phys. Rev. Lett., vol. 108, no. 16, pp. 1–5, 2012. <a href="#fnref9" class="footnote-backref">↩</a> <a href="#fnref9:1" class="footnote-backref">↩</a> <a href="#fnref9:2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>A. J. Minnich, M. S. Dresselhaus, Z. Ren, and G. Chen, “Bulk nanostructured thermoelectric materials: current research and future prospects,” Energy Environ. Sci., vol. 2, no. 5, p. 466, 2009. <a href="#fnref10" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p>H. S. Kim, Z. M. Gibbs, Y. Tang, H. Wang, and G. J. Snyder, “Characterization of Lorenz number with Seebeck coefficient measurement,” APL Mater., vol. 3, no. 4, pp. 1–6, 2015. <a href="#fnref11" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p>J. R. Sootsman, D. Y. Chung, and M. G. Kanatzidis, “New and old concepts in thermoelectric materials,” Angew. Chemie - Int. Ed., vol. 48, no. 46, pp. 8616–8639, 2009. <a href="#fnref12" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p>T. M. Tritt, “Thermoelectric Phenomena, Materials, and Applications,” Annu. Rev. Mater. Res., vol. 41, no. 1, pp. 433–448, 2011. <a href="#fnref13" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn14" class="footnote-item"><p>X. Du, R. Shi, Y. Ma, F. Cai, X. Wang, and Z. Yuan, “Enhanced thermoelectric performance of n-type Bi 2 S 3 with added ZnO for power generation,” RSC Adv., vol. 5, no. 39, pp. 31004–31009, 2015. <a href="#fnref14" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn15" class="footnote-item"><p>J. P. Heremans, V. Jovovic, E. S. Toberer, A. Saramat, K. Kurosaki, A. Charoenphakdee, S. Yamanaka, and G. J. Snyder, “Enhancement of Thermoelectric of the Electronic Density of States,” Science (80-. )., vol. 321, no. July, pp. 1457–1461, 2008. <a href="#fnref15" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn16" class="footnote-item"><p>H.Julian Goldsmid, Introduction to Thermoelectricicty. 2010. <a href="#fnref16" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn17" class="footnote-item"><p>T. M. Tritt, “Thermoelectric Phenomena, Materials, and Applications,” Annu. Rev. Mater. Res., vol. 41, no. 1, pp. 433–448, 2011. <a href="#fnref17" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn18" class="footnote-item"><p>Y. Liu, J. Ding, B. Xu, J. Lan, Y. Zheng, B. Zhan, B. Zhang, Y. Lin, and C. Nan, “Enhanced thermoelectric performance of La-doped BiCuSeO by tuning band structure,” Appl. Phys. Lett., vol. 106, no. 23, 2015. <a href="#fnref18" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn19" class="footnote-item"><p>High-temperature charge transport and thermoelectric properties of a degenerately Al-doped ZnO nanocomposite <a href="#fnref19" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn20" class="footnote-item"><p>J. P. Heremans, V. Jovovic, E. S. Toberer, A. Saramat, K. Kurosaki, A. Charoenphakdee, S. Yamanaka, and G. J. Snyder, “Enhancement of Thermoelectric of the Electronic Density of States,” Science (80-. )., vol. 321, no. July, pp. 1457–1461, 2008. <a href="#fnref20" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn21" class="footnote-item"><p>Tsubota T, Ohno T, Shiraishi N, et al. Thermoelectric properties of Sn 1− x− y Ti y Sb x O 2 ceramics[J]. Journal of Alloys and Compounds, 2008, 463(1): 288-293. <a href="#fnref21" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn22" class="footnote-item"><p>A. F. May and G. J. Snyder, “Introduction to Modeling Thermoelectric Transport at High Temperatures,” Thermoelectr. Its Energy Harvest., p. 11, 2012. <a href="#fnref22" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn23" class="footnote-item"><p>L. J. Zhang, B. P. Zhang, Z. H. Ge, and C. G. Han, “Fabrication and properties of Bi2S3-xSex thermoelectric polycrystals,” Solid State Commun., vol. 162, pp. 48–52, 2013. <a href="#fnref23" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn24" class="footnote-item"><p>W. Liu, X. Tan, K. Yin, H. Liu, X. Tang, J. Shi, Q. Zhang, and C. Uher, “Convergence of conduction bands as a means of enhancing thermoelectric performance of n-type Mg 2Si 1-xSn x solid solutions,” Phys. Rev. Lett., vol. 108, no. 16, pp. 1–5, 2012. <a href="#fnref24" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn25" class="footnote-item"><p>H. Xie, X. Su, G. Zheng, T. Zhu, K. Yin, Y. Yan, C. Uher, M. G. Kanatzidis, and X. Tang, “The Role of Zn in Chalcopyrite CuFeS 2 : Enhanced Thermoelectric Properties of Cu 1- x Zn x FeS 2 with In Situ Nanoprecipitates,” Adv. Energy Mater., p. 1601299, 2016. <a href="#fnref25" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn26" class="footnote-item"><p>W. Li, L. Zheng, B. Ge, S. Lin, X. Zhang, Z. Chen, Y. Chang, and Y. Pei, “Promoting SnTe as an Eco-Friendly Solution for p-PbTe Thermoelectric via Band Convergence and Interstitial Defects,” Adv. Mater., p. 1605887, 2017. <a href="#fnref26" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn27" class="footnote-item"><p>A. Kosuga, M. Uno, K. Kurosaki, and S. Yamanaka, “Thermoelectric properties of Ag1−xPb18SbTe20 (x = 0, 0.1, 0.3),” J. Alloys Compd., vol. 387, no. 1–2, pp. 52–55, 2005. <a href="#fnref27" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn28" class="footnote-item"><p>A. F. May and G. J. Snyder, “Introduction to Modeling Thermoelectric Transport at High Temperatures,” Thermoelectr. Its Energy Harvest., p. 11, 2012. <a href="#fnref28" class="footnote-backref">↩</a> <a href="#fnref28:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn29" class="footnote-item"><p>Y. Pan and J.-F. Li, “Thermoelectric performance enhancement in n-type Bi2(TeSe)3 alloys owing to nanoscale inhomogeneity combined with a spark plasma-textured microstructure,” NPG Asia Mater., vol. 8, no. 6, p. e275, 2016.k <a href="#fnref29" class="footnote-backref">↩</a> <a href="#fnref29:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn30" class="footnote-item"><p>Y. Pei, L. Zheng, W. Li, S. Lin, Z. Chen, Y. Wang, X. Xu, H. Yu, Y. Chen, and B. Ge, “Interstitial Point Defect Scattering Contributing to High Thermoelectric Performance in SnTe,” Adv. Electron. Mater., 2016. <a href="#fnref30" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn31" class="footnote-item"><p>H. Xie, X. Su, G. Zheng, T. Zhu, K. Yin, Y. Yan, C. Uher, M. G. Kanatzidis, and X. Tang, “The Role of Zn in Chalcopyrite CuFeS 2 : Enhanced Thermoelectric Properties of Cu 1- x Zn x FeS 2 with In Situ Nanoprecipitates,” Adv. Energy Mater., p. 1601299, 2016. <a href="#fnref31" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn32" class="footnote-item"><p>J. He, J. R. Sootsman, S. N. Girard, J.-C. Zheng, J. Wen, Y. Zhu, M. G. Kanatzidis, and V. P. Dravid, “On the Origin of Increased Phonon Scattering in Nanostructured PbTe Based Thermoelectric Materials,” no. 14, pp. 8669–8675, 2010. <a href="#fnref32" class="footnote-backref">↩</a> <a href="#fnref32:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn33" class="footnote-item"><p>Y. Wang, J. Chen, P. Wang, L. Chen, Y.-B. Chen, and L.-M. Wu, “Syntheses, Growth Mechanism, and Optical Properties of [001] Growing Bi 2 S 3 Nanorods,” J. Phys. Chem. C, vol. 113, no. 36, pp. 16009–16014, 2009. <a href="#fnref33" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn34" class="footnote-item"><p>D. Guo, C. Hu, and C. Zhang, “First-principles study on doping and temperature dependence of thermoelectric property of Bi2S3 thermoelectric material,” Mater. Res. Bull., vol. 48, no. 5, pp. 1984–1988, 2013. <a href="#fnref34" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn35" class="footnote-item"><p>R. Chmielowski, D. Péré, C. Bera, I. Opahle, W. Xie, S. Jacob, F. Capet, P. Roussel, A. Weidenkaff, G. K. H. Madsen, and G. Dennler, “Theoretical and experimental investigations of the thermoelectric properties of Bi2S3,” J. Appl. Phys., vol. 117, no. 12, pp. 0–10, 2015. <a href="#fnref35" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn36" class="footnote-item"><p>C. Iona, E. Hatzikraniotis, K. M. Paraskevopoulos, T. Kyratsi, A. Angelopoulos, and T. Fildisis, “Synthesis and Thermoelectric Properties of low-x Bi[sub 2]Se[sub 3−x]S[sub 3] Series,” vol. 997, pp. 997–1002, 2010. <a href="#fnref36" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn37" class="footnote-item"><p>G. Wang and T. Cagin, “Electronic structure of the thermoelectric materials Bi2Te3 and Sb2Te3 from first-principles calculations” Phys. Rev. B, vol. 76, no. 7, p. 75201, 2007. <a href="#fnref37" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn38" class="footnote-item"><p>J. P. Heremans, V. Jovovic, E. S. Toberer, A. Saramat, K. Kurosaki, A. Charoenphakdee, S. Yamanaka, and G. J. Snyder, “Enhancement of Thermoelectric of the Electronic Density of States,” Science (80-. )., vol. 321, no. July, pp. 1457–1461, 2008.<br>
+<strong>魏师兄Jacs</strong> 也引用了这个公式 <a href="#fnref38" class="footnote-backref">↩</a> <a href="#fnref38:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn39" class="footnote-item"><p>H.Julian Goldsmid, Introduction to Thermoelectricicty. 2010. <a href="#fnref39" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn40" class="footnote-item"><p>Y. Q. Yu, B. P. Zhang, Z. H. Ge, P. P. Shang, and Y. X. Chen, “Thermoelectric properties of Ag-doped bismuth sulfide polycrystals prepared by mechanical alloying and spark plasma sintering,” Mater. Chem. Phys., vol. 131, no. 1–2, pp. 216–222, 2011. <a href="#fnref40" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn41" class="footnote-item"><p>D. Guo, C. Hu, and C. Zhang, “First-principles study on doping and temperature dependence of thermoelectric property of Bi2S3 thermoelectric material,” Mater. Res. Bull., vol. 48, no. 5, pp. 1984–1988, 2013. <a href="#fnref41" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn42" class="footnote-item"><p>A. Kosuga, M. Uno, K. Kurosaki, and S. Yamanaka, “Thermoelectric properties of Ag1−xPb18SbTe20 (x = 0, 0.1, 0.3),” J. Alloys Compd., vol. 387, no. 1–2, pp. 52–55, 2005. <a href="#fnref42" class="footnote-backref">↩</a> <a href="#fnref42:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn43" class="footnote-item"><p>F. Ren, E. D. Case, J. E. Ni, E. J. Timm, E. Lara-Curzio, R. M. Trejo, C. H. Lin, and M. G. Kanatzidis, “Temperature-dependent elastic moduli of lead telluride-based thermoelectric materials,” Philos. Mag., vol. 89, no. 2, pp. 143–167, 2009. <a href="#fnref43" class="footnote-backref">↩</a> <a href="#fnref43:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn44" class="footnote-item"><p>J.-S. Rhyee, K. H. Lee, S. M. Lee, E. Cho, S. Il Kim, E. Lee, Y. S. Kwon, J. H. Shim, and G. Kotliar, “Peierls distortion as a route to high thermoelectric performance in In(4)Se(3-delta) crystals.,” Nature, vol. 459, no. 7249, pp. 965–968, 2009. <a href="#fnref44" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn45" class="footnote-item"><p>J. R. Sootsman, D. Y. Chung, and M. G. Kanatzidis, “New and old concepts in thermoelectric materials,” Angew. Chemie - Int. Ed., vol. 48, no. 46, pp. 8616–8639, 2009. <a href="#fnref45" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn46" class="footnote-item"><p>L.-D. Zhao, X. Zhang, H. Wu, G. Tan, Y. Pei, Y. Xiao, C. Chang, D. Wu, H. Chi, L. Zheng, S. Gong, C. Uher, J. He, and M. G. Kanatzidis, “Enhanced {Thermoelectric} {Properties} in the {Counter}-{Doped} {SnTe} {System} with {Strained} {Endotaxial} {SrTe},” J. Am. Chem. Soc., vol. 138, no. 7, pp. 2366–2373, 2016. <a href="#fnref46" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn47" class="footnote-item"><p>H.Julian Goldsmid, Introduction to Thermoelectricicty. 2010. <a href="#fnref47" class="footnote-backref">↩</a> <a href="#fnref47:1" class="footnote-backref">↩</a> <a href="#fnref47:2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn48" class="footnote-item"><p>P. G. Lau and R. J. Buist, “Calculation of thermoelectric power generation performance using\nfinite element analysis,” XVI ICT “97. Proc. ICT”97. 16th Int. Conf. Thermoelectr. (Cat. No.97TH8291), pp. 563–566, 1997. <a href="#fnref48" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn49" class="footnote-item"><p>A. R. M. Siddique, S. Mahmud, and B. Van Heyst, “A review of the state of the science on wearable thermoelectric power generators (TEGs) and their existing challenges,” Renew. Sustain. Energy Rev., vol. 73, no. February, pp. 730–744, 2017. <a href="#fnref49" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn50" class="footnote-item"><p>D. Champier, “Thermoelectric generators: A review of applications,” Energy Convers. Manag., vol. 140, pp. 167–181, 2017. <a href="#fnref50" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn51" class="footnote-item"><p>Q. Zhang, J. Liao, Y. Tang, M. Gu, C. Ming, P. Qiu, S. Bai, X. Shi, C. Uher, and L. Chen, “Realizing thermoelectric conversion efficiency of 12% in Bismuth Telluride/Skutterudite segmented modules through full-parameter optimization and energy-loss minimized integration,” Energy Environ. Sci., 2017. <a href="#fnref51" class="footnote-backref">↩</a> <a href="#fnref51:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn52" class="footnote-item"><p>X. Hu, A. Yamamoto, M. Ohta, and H. Nishiate, “Measurement and simulation of thermoelectric efficiency for single leg,” Rev. Sci. Instrum., vol. 86, no. 4, 2015. <a href="#fnref52" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn53" class="footnote-item"><p>L. Francioso, C. De Pascali, I. Farella, C. Martucci, P. Cretì, P. Siciliano, and A. Perrone, “Flexible thermoelectric generator for wearable biometric sensors,” Proc. IEEE Sensors, vol. 196, no. 6, pp. 747–750, 2010. <a href="#fnref53" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+
+  </body>
+  
+</html>
